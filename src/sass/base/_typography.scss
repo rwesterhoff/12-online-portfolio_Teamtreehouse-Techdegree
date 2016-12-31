@@ -1,0 +1,32 @@
+h1,
+h2,
+h3 {
+    font-family: FuturaPT-Heavy;
+    letter-spacing: 4px;
+}
+
+h1,
+h2 {
+    font-size: 18px;
+    color: $color-grey;
+}
+
+h3 {
+    font-size: 14px;
+    color: $color-white;
+}
+
+p,
+p + a {
+    font-family: AdellePE;
+    font-size: 16px;
+    letter-spacing: 0.25px;
+}
+
+p {
+    color: $color-grey;
+}
+
+p + a {
+    color: ;
+}
