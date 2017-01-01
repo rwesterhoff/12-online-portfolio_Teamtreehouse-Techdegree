@@ -1,0 +1,29 @@
+body {
+  font-family: AdellePE, serif; }
+
+h1,
+h2,
+h3 {
+  font-family: FuturaPT-Heavy, sans-serif;
+  letter-spacing: 4px; }
+
+h1,
+h2 {
+  font-size: 18px;
+  color: #333; }
+
+h3 {
+  font-size: 14px;
+  color: #fff; }
+
+p,
+p + a {
+  font-size: 16px;
+  letter-spacing: 0.25px; }
+
+p {
+  color: #333; }
+
+p + a {
+  color: #238EC4;
+  text-decoration: none; }

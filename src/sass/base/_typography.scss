@@ -1,7 +1,11 @@
+body {
+    font-family: $fonts-prim;
+}
+
 h1,
 h2,
 h3 {
-    font-family: FuturaPT-Heavy;
+    font-family: $fonts-sec;
     letter-spacing: 4px;
 }
 
@@ -18,7 +22,6 @@ h3 {
 
 p,
 p + a {
-    font-family: AdellePE;
     font-size: 16px;
     letter-spacing: 0.25px;
 }
@@ -28,5 +31,6 @@ p {
 }
 
 p + a {
-    color: ;
+    color: $color-link;
+    text-decoration: none;
 }
