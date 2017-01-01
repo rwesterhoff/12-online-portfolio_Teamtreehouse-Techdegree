@@ -1,24 +1,77 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1.5; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 body {
   font-family: AdellePE, serif; }
 
 h1,
 h2,
-h3 {
+h3,
+button {
+  text-transform: uppercase;
   font-family: FuturaPT-Heavy, sans-serif;
   letter-spacing: 4px; }
 
 h1,
 h2 {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #333; }
 
-h3 {
-  font-size: 14px;
+h3,
+button .button-cta {
+  font-size: 0.875rem;
   color: #fff; }
 
 p,
 p + a {
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.25px; }
 
 p {
@@ -27,3 +80,76 @@ p {
 p + a {
   color: #238EC4;
   text-decoration: none; }
+
+body {
+  padding: .75rem;
+  text-align: center; }
+
+.header {
+  display: block;
+  background: #35BCBC;
+  width: 100%;
+  padding: 1.5rem; }
+
+#logo {
+  margin-bottom: 0; }
+
+#logo + #name {
+  margin-top: -.95rem; }
+
+/* Mobile menu button */
+.menu-toggle {
+  position: relative;
+  top: 0px;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto; }
+  .menu-toggle .hamburger-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+    .menu-toggle .hamburger-icon-line {
+      width: 100%;
+      height: 4px;
+      margin: 4px 0;
+      background-color: #fff;
+      transition: all .1s; }
+  .menu-toggle.clicked {
+    top: 4px; }
+    .menu-toggle.clicked .hamburger-icon-line {
+      margin: 0; }
+    .menu-toggle.clicked .hamburger-icon-line:nth-child(1) {
+      transform: rotate(45deg); }
+    .menu-toggle.clicked .hamburger-icon-line:nth-child(2) {
+      display: none; }
+    .menu-toggle.clicked .hamburger-icon-line:nth-child(3) {
+      margin-top: -3px;
+      transform: rotate(-45deg); }
+
+/* Mobile menu */
+.menu-closed {
+  display: none; }
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 2.25rem;
+  padding: 0 1.125rem;
+  border-radius: 1.125rem;
+  display: inline-block; }
+  button.button-cta {
+    background-color: #333;
+    color: #fff; }
+
+p + a.link-sec {
+  display: block; }
+
+.tag {
+  font-family: FuturaPT-Book, sans-serif;
+  font-size: .75rem;
+  color: #333;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  display: inline-block; }

@@ -1,0 +1,14 @@
+.header {
+	display: block;
+    background: $color-ocean;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+#logo {
+	margin-bottom: 0;
+}
+
+#logo + #name {
+	margin-top: -.95rem;
+}

@@ -1,28 +1,32 @@
 body {
     font-family: $fonts-prim;
+    
 }
 
 h1,
 h2,
-h3 {
+h3,
+button {
+    text-transform: uppercase;
     font-family: $fonts-sec;
     letter-spacing: 4px;
 }
 
 h1,
 h2 {
-    font-size: 18px;
+    font-size: 1rem * 1.125;
     color: $color-grey;
 }
 
-h3 {
-    font-size: 14px;
+h3,
+button .button-cta {
+    font-size: 1rem * 0.875;
     color: $color-white;
 }
 
 p,
 p + a {
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 0.25px;
 }
 

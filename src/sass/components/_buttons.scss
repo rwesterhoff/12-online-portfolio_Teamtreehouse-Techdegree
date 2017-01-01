@@ -1,0 +1,12 @@
+button {
+	appearance: none;
+	border: none;
+	height: (36/16) + rem;
+	padding: 0 (18/16) + rem;
+	border-radius: (18/16) + rem;
+	display: inline-block;
+	&.button-cta {
+		background-color: $color-grey;
+		color: $color-white;
+	}
+}
