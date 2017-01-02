@@ -1,0 +1,23 @@
+.module > header {
+	position: relative;
+	height: (108/16) + rem;
+}
+
+.module-item:not(:last-child) {
+    margin-bottom: .25rem;
+}
+
+.module-title {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+    &:after {
+        position: absolute;
+        top: calc(100% + .75rem);
+        left: 50%;
+        width: 1.5rem;
+        content: '';
+        transform: translateX(-50%);
+        border: .125rem solid $color-grey; 
+    }
+}

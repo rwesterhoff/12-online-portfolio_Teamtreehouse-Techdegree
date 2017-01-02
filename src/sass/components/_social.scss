@@ -1,0 +1,28 @@
+#social-linkedin {
+    background-image: url(../img/icon-social-linkedin.svg);
+}
+
+#social-mail {
+    background-image: url(../img/icon-social-mail.svg);
+}
+
+#social-twitter {
+    background-image: url(../img/icon-social-twitter.svg);
+}
+
+.social-links {
+    	font-size: 0;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0 (6/16) + rem;
+    & a {
+        display: inline-block;
+        overflow: hidden;
+        width: 3rem;
+        height: 3rem;
+        text-indent: -999999px;
+        background-size: 100%;
+    }
+}
