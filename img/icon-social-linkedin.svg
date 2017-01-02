@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-social-linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="24" cy="24" r="24"></circle>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="48" height="48" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-Portrait-open" transform="translate(-136.000000, -1806.000000)">
+            <g id="main" transform="translate(12.000000, 207.000000)">
+                <g id="contact-section" transform="translate(64.000000, 1531.000000)">
+                    <g id="icons" transform="translate(0.000000, 68.000000)">
+                        <g id="linkedin" transform="translate(60.000000, 0.000000)">
+                            <g id="icon-social-linkedin">
+                                <rect id="Rectangle" x="0" y="0" width="48" height="48"></rect>
+                                <use id="Oval" stroke="#35BCBC" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+                                <path d="M13.6412383,20.0870324 L17.8937826,20.0870324 L17.8937826,34.9076939 L13.6412383,34.9076939 L13.6412383,20.0870324 Z M15.6591123,18.2332274 L15.6283246,18.2332274 C14.0889421,18.2332274 13.0909091,17.1002689 13.0909091,15.6655607 C13.0909091,14.2015157 14.1184469,13.0909091 15.6886171,13.0909091 C17.2575045,13.0909091 18.2221842,14.1987218 18.2529719,15.6613697 C18.2529719,17.096078 17.2575045,18.2332274 15.6591123,18.2332274 L15.6591123,18.2332274 Z M34.9090909,34.9090909 L30.0869751,34.9090909 L30.0869751,27.2382216 C30.0869751,25.2307477 29.3326777,23.861698 27.673993,23.861698 C26.4052852,23.861698 25.6997349,24.7851081 25.3713333,25.6777844 C25.2481827,25.996298 25.267425,26.4419376 25.267425,26.8889743 L25.267425,34.9090909 L20.4902078,34.9090909 C20.4902078,34.9090909 20.5517831,21.3219712 20.4902078,20.0870324 L25.267425,20.0870324 L25.267425,22.4130199 C25.5496451,21.3960116 27.0761994,19.9445395 29.5122723,19.9445395 C32.5345933,19.9445395 34.9090909,22.0777425 34.9090909,26.6668529 L34.9090909,34.9090909 L34.9090909,34.9090909 Z" id="Shape" fill="#35BCBC" fill-rule="evenodd"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

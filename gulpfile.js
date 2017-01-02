@@ -1,12 +1,17 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var prefix = require('gulp-autoprefixer');
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync').create(),
+    prefix = require('gulp-autoprefixer'),
+    purify = require('gulp-purifycss'),
+    rename = require('gulp-rename'),
+    del = require('del');
 
 var paths = {
     scss: 'src/sass/**/*.scss',
     css: 'src/css',
-    html: 'src/*.html'
+    img: 'src/img',
+    html: 'src/*.html',
+    js: 'src/js/**/*.js'
 }
 
 // Static Server + watching scss/html files
@@ -30,6 +35,22 @@ gulp.task('sass', function() {
         }))
         .pipe(gulp.dest(paths.css))
         .pipe(browserSync.stream());
+});
+
+gulp.task('purify', ['sass'], function() {
+    return gulp.src(paths.css + '/' + 'main.css')
+        .pipe(purify(['src/*.js', 'src/*.html'], { minify: true }))
+        .pipe(rename('main.css'))
+        .pipe(gulp.dest(paths.css));
+});
+
+gulp.task('clean', function() {
+    return del(['dist', 'css', 'img', 'js', '*.html'], { force: true });
+});
+
+gulp.task('build', ['clean', 'purify'], function() {
+    return gulp.src([paths.css + '/main.css' /*, paths.js*/ , paths.img + '/' + '*', paths.html], { base: 'src/' })
+        .pipe(gulp.dest(''));
 });
 
 gulp.task('default', ['serve']);

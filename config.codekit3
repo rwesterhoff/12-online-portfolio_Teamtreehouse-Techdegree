@@ -658,6 +658,12 @@
 		"oAP": "\/build\/node_modules",
 		"oF": 0
 		},
+	"\/robots.txt": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/robots.txt",
+		"oF": 0
+		},
 	"\/src\/css\/base\/index.css": {
 		"aP": 0,
 		"bl": 0,
@@ -698,6 +704,94 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/src\/css\/utilities\/index.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/src\/css\/utilities\/index-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/src\/img\/api.jpg": {
+		"ft": 16384,
+		"iS": 9381,
+		"oA": 0,
+		"oAP": "\/src\/img\/api.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/api@2x.jpg": {
+		"ft": 16384,
+		"iS": 27520,
+		"oA": 0,
+		"oAP": "\/src\/img\/api@2x.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/charts.jpg": {
+		"ft": 16384,
+		"iS": 4683,
+		"oA": 0,
+		"oAP": "\/src\/img\/charts.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/charts@2x.jpg": {
+		"ft": 16384,
+		"iS": 12375,
+		"oA": 0,
+		"oAP": "\/src\/img\/charts@2x.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/forms.jpg": {
+		"ft": 16384,
+		"iS": 6492,
+		"oA": 0,
+		"oAP": "\/src\/img\/forms.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/forms@2x.jpg": {
+		"ft": 16384,
+		"iS": 17321,
+		"oA": 0,
+		"oAP": "\/src\/img\/forms@2x.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/icon-social-linkedin.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/src\/img\/icon-social-linkedin.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/src\/img\/icon-social-mail.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/src\/img\/icon-social-mail.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/src\/img\/icon-social-twitter.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/src\/img\/icon-social-twitter.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/src\/img\/logo.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -708,11 +802,68 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/src\/img\/performance.jpg": {
+		"ft": 16384,
+		"iS": 6187,
+		"oA": 0,
+		"oAP": "\/src\/img\/performance.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/performance@2x.jpg": {
+		"ft": 16384,
+		"iS": 15397,
+		"oA": 0,
+		"oAP": "\/src\/img\/performance@2x.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/responsive.jpg": {
+		"ft": 16384,
+		"iS": 4683,
+		"oA": 0,
+		"oAP": "\/src\/img\/responsive.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/responsive@2x.jpg": {
+		"ft": 16384,
+		"iS": 11720,
+		"oA": 0,
+		"oAP": "\/src\/img\/responsive@2x.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/video.jpg": {
+		"ft": 16384,
+		"iS": 5840,
+		"oA": 0,
+		"oAP": "\/src\/img\/video.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/src\/img\/video@2x.jpg": {
+		"ft": 16384,
+		"iS": 14472,
+		"oA": 0,
+		"oAP": "\/src\/img\/video@2x.jpg",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/src\/index.html": {
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/src\/index.html",
 		"oF": 0
+		},
+	"\/src\/js\/menu.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/src\/js\/min\/menu-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
 		},
 	"\/src\/sass\/base\/_reset.scss": {
 		"aP": 0,
@@ -779,6 +930,58 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/src\/sass\/components\/_header.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/css\/_header.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/components\/_links.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/css\/_links.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/components\/_menu.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/css\/_menu.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/components\/_modules.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/css\/_modules.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/src\/sass\/components\/_projects.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -788,6 +991,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/src\/sass\/css\/_projects.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/components\/_social.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/css\/_social.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -840,6 +1056,32 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/src\/css\/main.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/utilities\/_mixins.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/css\/_mixins.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/src\/sass\/utilities\/index.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/src\/sass\/css\/index.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
