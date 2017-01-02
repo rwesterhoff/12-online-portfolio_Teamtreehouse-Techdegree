@@ -1,3 +1,10 @@
 body {
   padding: .75rem;
   text-align: center; }
+
+main {
+  padding-bottom: 120px; }
+
+p {
+  margin: 0.75rem auto;
+  max-width: 45rem; }

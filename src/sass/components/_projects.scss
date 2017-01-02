@@ -1,8 +1,93 @@
+.project-header {
+    @include aspect-ratio(296, 120);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    & .content {
+        vertical-align: middle;
+    }
+}
+
+.project-desc {
+    background-color: $color-light-grey;
+    padding: 1.75rem 0.75rem 2.25rem;
+}
+
+#project-1 .project-header {
+    background-color: $color-ripe-lemon;
+    background-image: url(../img/responsive.jpg)
+}
+
+#project-2 .project-header {
+    background-color: $color-curious-blue;
+    background-image: url(../img/forms.jpg)
+}
+
+#project-3 .project-header {
+    background-color: $color-outrageous-orange;
+    background-image: url(../img/video.jpg)
+}
+
+#project-4 .project-header {
+    background-color: $color-chateau-green;
+    background-image: url(../img/charts.jpg)
+}
+
+#project-5 .project-header {
+    background-color: $color-medium-purple;
+    background-image: url(../img/api.jpg)
+}
+
+#project-6 .project-header {
+    background-color: $color-pelorous;
+    background-image: url(../img/performance.jpg)
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    #project-1 .project-header {
+        background-color: $color-ripe-lemon;
+        background-image: url(../img/responsive@2x.jpg)
+    }
+    #project-2 .project-header {
+        background-color: $color-curious-blue;
+        background-image: url(../img/forms@2x.jpg)
+    }
+    #project-3 .project-header {
+        background-color: $color-outrageous-orange;
+        background-image: url(../img/video@2x.jpg)
+    }
+    #project-4 .project-header {
+        background-color: $color-chateau-green;
+        background-image: url(../img/charts@2x.jpg)
+    }
+    #project-5 .project-header {
+        background-color: $color-medium-purple;
+        background-image: url(../img/api@2x.jpg)
+    }
+    #project-6 .project-header {
+        background-color: $color-pelorous;
+        background-image: url(../img/performance@2x.jpg)
+    }
+}
+
+.project-title {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tags {
+    font-size: 0;
+}
+
 .tag {
     font-family: $fonts-ter;
-    font-size: .75rem;
-    color: $color-grey;
+    font-size: 0.75rem;
+    display: inline-block;
     letter-spacing: 4.5px;
     text-transform: uppercase;
-	display: inline-block;
+    color: $color-grey;
+    margin: 0.25rem 0.75rem;
 }

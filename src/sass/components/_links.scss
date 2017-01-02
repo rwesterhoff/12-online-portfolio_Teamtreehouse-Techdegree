@@ -1,5 +1,14 @@
 p + a {
-	&.link-sec {
-		display: block;
-	}
+    &.link-sec {
+        display: table;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: .375rem (14/16) + rem;
+        background-color: transparent;
+        border-radius: (18/16) + rem;
+        background-color: transparent;
+        margin: 0.75rem 0;
+    }
 }
+ 
