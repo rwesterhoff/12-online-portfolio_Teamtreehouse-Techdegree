@@ -1,4 +1,4 @@
-# Project 12 - Online Portfolio
+# Project 12 - Online portfolio
 
 Build an online portfolio to showcase the work you've created as part of this program and any projects you've built on your own. Bring all of your talents with HTML, CSS and JavaScript together to create a fun and interactive online portfolio.
 
