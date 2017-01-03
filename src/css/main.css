@@ -294,7 +294,9 @@ p + a.link-sec {
 
 .social-link {
   display: inline-block;
-  margin: 0 0.375rem; }
+  margin: 0 0.375rem;
+  border: 0.25rem solid #35BCBC;
+  border-radius: 50%; }
   .social-link a {
     display: inline-block;
     overflow: hidden;

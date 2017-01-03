@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     del = require('del');
 
 var paths = {
-    scss: 'src/sass/main.scss',
+    scss: 'src/sass',
     css: 'src/css',
     img: 'src/img',
     html: 'src/*.html',
@@ -21,13 +21,13 @@ gulp.task('serve', ['sass'], function() {
         server: "src"
     });
 
-    gulp.watch(paths.scss, ['sass']);
+    gulp.watch(paths.scss + '/' + '**/*.scss', ['sass']);
     gulp.watch(paths.html).on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src(paths.scss)
+    return gulp.src(paths.scss + '/' + 'main.scss')
         .pipe(sass())
         .pipe(prefix({
             browsers: ['last 2 versions'],
