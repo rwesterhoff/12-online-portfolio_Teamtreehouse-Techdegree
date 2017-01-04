@@ -4,8 +4,11 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
+    display: flex;
+    justify-content: center;
     & .content {
-        vertical-align: middle;
+        display: flex;
+        align-self: center;
     }
 }
 

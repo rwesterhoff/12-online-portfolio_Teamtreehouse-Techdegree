@@ -191,7 +191,11 @@ p {
   background-blend-mode: multiply;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: center; }
+  background-position: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center; }
   .project-header:before {
     display: block;
     content: "";
@@ -204,7 +208,10 @@ p {
     right: 0;
     bottom: 0; }
   .project-header .content {
-    vertical-align: middle; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center; }
 
 .project-desc {
   background-color: #F5F5F5;
