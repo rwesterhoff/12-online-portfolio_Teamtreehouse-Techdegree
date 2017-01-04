@@ -50,7 +50,7 @@ table {
 
 body {
   font-size: 16;
-  font-family: AdellePE, serif; }
+  font-family: "adelle", serif; }
 
 h1,
 h2,
@@ -58,7 +58,8 @@ h3,
 .menu-item,
 button {
   text-transform: uppercase;
-  font-family: FuturaPT-Heavy, sans-serif;
+  font-family: "futura-pt", sans-serif;
+  font-weight: 700;
   letter-spacing: 4px; }
 
 h1,
@@ -85,17 +86,18 @@ a {
   text-decoration: none; }
 
 [class^=link] {
-  font-family: FuturaPT-Heavy, sans-serif;
+  font-family: "futura-pt", sans-serif;
   font-size: 0.875rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 4px; }
 
 body {
-  padding: .75rem;
+  padding: 0.75rem;
   text-align: center; }
 
 main {
-  padding-bottom: 120px; }
+  padding-bottom: 7.5rem; }
 
 p {
   margin: 0.75rem auto;
@@ -268,8 +270,9 @@ p {
   font-size: 0; }
 
 .tag {
-  font-family: FuturaPT-Book, sans-serif;
+  font-family: "futura-pt", sans-serif;
   font-size: 0.75rem;
+  font-weight: 400;
   display: inline-block;
   letter-spacing: 4.5px;
   text-transform: uppercase;

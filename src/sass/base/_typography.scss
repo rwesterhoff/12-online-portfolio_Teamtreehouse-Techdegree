@@ -10,6 +10,7 @@ h3,
 button {
     text-transform: uppercase;
     font-family: $fonts-sec;
+    font-weight: 700;
     letter-spacing: 4px;
 }
 
@@ -44,6 +45,7 @@ a {
 [class^=link] {
     font-family: $fonts-sec;
     font-size: px-to-rem(14);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
 }

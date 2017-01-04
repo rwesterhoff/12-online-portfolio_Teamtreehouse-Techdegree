@@ -83,8 +83,9 @@
 }
 
 .tag {
-    font-family: $fonts-ter;
+    font-family: $fonts-sec;
     font-size: px-to-rem(12);
+    font-weight: 400;
     display: inline-block;
     letter-spacing: 4.5px;
     text-transform: uppercase;

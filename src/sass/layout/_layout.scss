@@ -1,13 +1,13 @@
 body {
-    padding: .75rem;
+    padding: px-to-rem(12);
     text-align: center;
 }
 
 main {
-    padding-bottom: 120px;
+    padding-bottom: px-to-rem(120);
 }
 
 p {
-    margin: 0.75rem auto;
-    max-width: 45rem;
+    margin: px-to-rem(12) auto;
+    max-width: px-to-rem(720);
 }
