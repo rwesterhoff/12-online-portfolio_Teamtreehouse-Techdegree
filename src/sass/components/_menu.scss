@@ -4,9 +4,9 @@
     cursor: pointer;
     position: relative;
     top: 0;
-    width: (26/16) + rem;
-    height: (20/16) + rem;
-    margin: 2rem auto 0;
+    width: px-to-rem(26);
+    height: px-to-rem(20);
+    margin: px-to-rem(32) auto 0;
     .hamburger-icon {
         position: relative;
         top: 50%;
@@ -45,7 +45,7 @@
 
 .menu-open {
     display: block;
-    margin-top: 1.5rem;
+    margin-top: px-to-rem(24);
 }
 
 
@@ -55,5 +55,5 @@
     color: $color-white;
     text-decoration: none;
     display: block;
-    padding: .375rem (14/16) + rem;
+    padding: px-to-rem(6) px-to-rem(14);
 }

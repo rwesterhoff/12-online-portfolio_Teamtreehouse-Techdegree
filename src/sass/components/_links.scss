@@ -3,9 +3,9 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    padding: (7.5/16) + rem (18/16) + rem;
-    border-radius: (18/16) + rem;
-    margin: 0.75rem 0;
+    padding: px-to-rem(7.5) px-to-rem(18);
+    border-radius: px-to-rem(18);
+    margin: px-to-rem(12) 0;
 }
 
 .link-sec {

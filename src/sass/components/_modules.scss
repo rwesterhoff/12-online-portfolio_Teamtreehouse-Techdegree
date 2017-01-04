@@ -1,10 +1,10 @@
 .module > header {
 	position: relative;
-	height: (108/16) + rem;
+	height: px-to-rem(108);
 }
 
 .module-item:not(:last-child) {
-    margin-bottom: .25rem;
+    margin-bottom: px-to-rem(4);
 }
 
 .module-title {
@@ -13,11 +13,11 @@
 	transform: translateY(-50%);
     &:after {
         position: absolute;
-        top: calc(100% + .75rem);
+        bottom: - px-to-rem(18);
         left: 50%;
-        width: 1.5rem;
+        width: px-to-rem(24);
         content: '';
         transform: translateX(-50%);
-        border: .125rem solid $color-grey; 
+        border: px-to-rem(2) solid $color-grey; 
     }
 }

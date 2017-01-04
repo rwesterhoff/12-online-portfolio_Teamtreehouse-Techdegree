@@ -2,7 +2,7 @@
 	display: block;
     background: $color-pelorous;
     width: 100%;
-    padding: 1.5rem;
+    padding: px-to-rem(24);
 }
 
 #logo {
@@ -10,5 +10,5 @@
 }
 
 #logo + #name {
-	margin-top: -.95rem;
+	margin-top: - px-to-rem(15.2);
 }
