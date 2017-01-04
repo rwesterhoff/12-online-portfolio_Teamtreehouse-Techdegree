@@ -48,8 +48,8 @@ gulp.task('clean', function() {
     return del(['dist', 'css', 'img', 'js', '*.html'], { force: true });
 });
 
-gulp.task('build', ['clean', 'purify'], function() {
-    return gulp.src([/*paths.css + '/main.css' , */paths.js , paths.img + '/' + '*', paths.html], { base: 'src/' })
+gulp.task('build', ['clean'/*, 'purify'*/], function() {
+    return gulp.src([paths.css + '/main.css' , paths.js , paths.img + '/' + '*', paths.html], { base: 'src/' })
         .pipe(gulp.dest(''));
 });
 
