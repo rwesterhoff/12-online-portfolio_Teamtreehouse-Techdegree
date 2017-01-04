@@ -1,6 +1,5 @@
 body {
     font-family: $fonts-prim;
-    
 }
 
 h1,
@@ -8,7 +7,10 @@ h2,
 h3,
 .menu-item,
 button,
-a.button-cta {
+
+/* a.button-cta */
+
+{
     text-transform: uppercase;
     font-family: $fonts-sec;
     letter-spacing: 4px;
@@ -16,15 +18,18 @@ a.button-cta {
 
 h1,
 h2 {
-    font-size: 1rem * 1.125;
+    font-size: 1.125rem;
     color: $color-grey;
 }
 
 h3,
 .menu-item,
-button .button-cta,
-a.button-cta {
-    font-size: 1rem * 0.875;
+button
+/* .button-cta,
+a.button-cta */
+
+{
+    font-size: 0.875rem;
     color: $color-white;
 }
 
@@ -38,7 +43,14 @@ p {
     color: $color-grey;
 }
 
-p + a {
+a {
     color: $color-link;
     text-decoration: none;
+}
+
+[class^=link] {
+    font-family: $fonts-sec;
+    font-size: (14/16) + rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
