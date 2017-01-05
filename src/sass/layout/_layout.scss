@@ -8,6 +8,10 @@ main {
 }
 
 p {
-    margin: px-to-rem(12) auto;
+    margin: 0 auto;
     max-width: px-to-rem(720);
+}
+
+.tags + p {
+    margin: px-to-rem(12) auto;
 }
