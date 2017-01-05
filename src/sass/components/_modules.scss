@@ -1,6 +1,12 @@
+.module:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+
 .module > header {
-	position: relative;
-	height: px-to-rem(108);
+    position: relative;
+    height: px-to-rem(108);
 }
 
 .module-item:not(:last-child) {
@@ -8,9 +14,9 @@
 }
 
 .module-title {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     &:after {
         position: absolute;
         bottom: - px-to-rem(18);
@@ -18,6 +24,6 @@
         width: px-to-rem(24);
         content: '';
         transform: translateX(-50%);
-        border: px-to-rem(2) solid $color-grey; 
+        border: px-to-rem(2) solid $color-grey;
     }
 }

@@ -15,3 +15,41 @@ p {
 .tags + p {
     margin: px-to-rem(12) auto;
 }
+
+@media screen and (min-width: #{$bkp-m}) and (max-width: #{$bkp-m-l}) {
+    .module-item {
+        width: calc(50% - 4px);
+        float: left;
+        &:nth-child(even) {
+            margin-right: 2px;
+        }
+        &:nth-child(odd) {
+            margin-left: 2px;
+        }
+    }
+}
+
+@media screen and (min-width: #{$bkp-l}) {
+    .module-item {
+        width: calc((1/3 * 100%) - 8px;
+        float: left;
+        &:nth-child(3n + 2) {
+            margin-right: 2px;
+        }
+        &:nth-child(3n + 1) {
+            margin-left: 2px;
+        }
+        &:nth-child(3n + 0) {
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+    }
+}
+
+
+/* INJECT WITH JS ONLY > PROGRESSIVE ENHANCEMENT */
+
+.project-desc {
+    display: none;
+}
+
