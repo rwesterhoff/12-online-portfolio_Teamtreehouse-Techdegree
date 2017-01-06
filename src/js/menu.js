@@ -1,5 +1,5 @@
 // Prepare menu nav and menu to inject HTML
-var menu = document.getElementById('menu-mobile'),
+var menu = document.getElementById('menu'),
     nav = document.getElementById('nav-prim');
 
 // Add the toggle to the nav element

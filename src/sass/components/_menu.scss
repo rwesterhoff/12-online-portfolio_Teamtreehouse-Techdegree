@@ -1,4 +1,12 @@
-/* Mobile menu button */
+.menu {
+    margin-top: px-to-rem(24);
+}
+.menu li.menu-item {
+    display: list-item;
+}
+
+
+/* JS menu button */
 
 .menu-toggle {
     cursor: pointer;
@@ -37,7 +45,7 @@
 }
 
 
-/* Mobile menu */
+/* Toggle visibility menu */
 
 .menu-closed {
     display: none;
@@ -45,7 +53,6 @@
 
 .menu-open {
     display: block;
-    margin-top: px-to-rem(24);
 }
 
 

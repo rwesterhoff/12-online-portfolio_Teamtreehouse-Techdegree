@@ -16,7 +16,24 @@ p {
     margin: px-to-rem(12) auto;
 }
 
-/* Inject with Javascript enabled for progressive enhancement */
+
+/* Responsiveness */
+
+@media screen and (min-width: #{$bkp-m}) {
+    .menu-toggle {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    .menu li.menu-item {
+        display: inline-block;
+    }
+}
+
+
+/* Injected with Javascript enabled for progressive enhancement */
+
 .js {
     @media screen and (min-width: #{$bkp-m}) and (max-width: #{$bkp-m-l}) {
         .module-item {
