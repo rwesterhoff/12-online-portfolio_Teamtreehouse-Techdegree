@@ -237,21 +237,26 @@ button {
     -ms-flex-pack: center;
     justify-content: center; }
 
-.js .project-desc {
-  display: none; }
-  .js .project-desc[data-state=visible] {
-    display: block; }
-
 .js .button-cta-oncolor {
-  opacity: 0; }
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all linear .2s; }
   .js .button-cta-oncolor:focus {
     opacity: 1; }
 
 .js .project-header:hover .project-title {
-  opacity: 0; }
+  opacity: 0;
+  transition: all linear .2s; }
 
 .js .project-header:hover .button-cta-oncolor {
   opacity: 1; }
+
+.js .project-desc {
+  display: none; }
+  .js .project-desc[data-state=visible] {
+    display: block; }
 
 .project-desc {
   background-color: #F5F5F5;
@@ -332,8 +337,7 @@ button {
 .module-item:not(:last-child) {
   margin-bottom: 0.25rem; }
 
-.module-title,
-.project-header .button-cta-oncolor {
+.module-title {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
