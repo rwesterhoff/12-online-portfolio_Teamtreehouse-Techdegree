@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     purify = require('gulp-purifycss'),
     rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
     del = require('del');
 
 var paths = {
@@ -11,17 +12,29 @@ var paths = {
     css: 'src/css',
     img: 'src/img',
     html: 'src/*.html',
-    js: 'src/js/**/*.js'
+    js: 'src/js'
 }
 
+// Concat Javascript files
+gulp.task('scripts', function() {
+    return gulp.src([
+        paths.js + '/available-js.js',
+        paths.js + '/menu.js'
+        ])
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest(paths.js))
+        .pipe(browserSync.stream());
+});
+
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['scripts','sass'], function() {
 
     browserSync.init({
         server: "src"
     });
 
     gulp.watch(paths.scss + '/' + '**/*.scss', ['sass']);
+    gulp.watch(paths.js + '/' + '*', ['scripts']);
     gulp.watch(paths.html).on('change', browserSync.reload);
 });
 
