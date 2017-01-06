@@ -109,7 +109,7 @@ p {
 /* Inject with Javascript enabled for progressive enhancement */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .js .module-item {
-    width: calc(50% - 4px);
+    width: calc(50% - 2px);
     float: left; }
     .js .module-item:nth-child(even) {
       margin-right: 2px; }
@@ -118,7 +118,7 @@ p {
 
 @media screen and (min-width: 1024px) {
   .js .module-item {
-    width: calc((1/3 * 100%) - 8px);
+    width: calc((1/3 * 100%) - (8/3 * 1px));
     float: left; }
     .js .module-item:nth-child(3n + 2) {
       margin-right: 2px; }
@@ -127,9 +127,6 @@ p {
     .js .module-item:nth-child(3n + 0) {
       margin-left: 2px;
       margin-right: 2px; } }
-
-.js .project-desc {
-  display: none; }
 
 .header {
   display: block;
@@ -186,21 +183,21 @@ p {
   display: block;
   padding: 0.375rem 0.875rem; }
 
-/* button {
-    display: inline-block;
-    height: (36/16) + rem;
-    padding: 0 (18/16) + rem;
-    cursor: pointer;
-    border: none;
-    border-radius: (18/16) + rem;
-    appearance: none;
-}
+button {
+  display: inline-block;
+  height: 2.25rem;
+  padding: 0 1.125rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1.125rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
 
-.button-cta {
-    color: $color-white;
-    background-color: $color-grey;
-}
- */
+.button-cta-oncolor {
+  color: #333;
+  background-color: #fff; }
+
 [class^=link] {
   display: table;
   position: relative;
@@ -239,6 +236,22 @@ p {
     display: flex;
     -ms-flex-pack: center;
     justify-content: center; }
+
+.js .project-desc {
+  display: none; }
+  .js .project-desc[data-state=visible] {
+    display: block; }
+
+.js .button-cta-oncolor {
+  opacity: 0; }
+  .js .button-cta-oncolor:focus {
+    opacity: 1; }
+
+.js .project-header:hover .project-title {
+  opacity: 0; }
+
+.js .project-header:hover .button-cta-oncolor {
+  opacity: 1; }
 
 .project-desc {
   background-color: #F5F5F5;
@@ -319,18 +332,20 @@ p {
 .module-item:not(:last-child) {
   margin-bottom: 0.25rem; }
 
-.module-title {
+.module-title,
+.project-header .button-cta-oncolor {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
-  .module-title:after {
-    position: absolute;
-    bottom: -1.125rem;
-    left: 50%;
-    width: 1.5rem;
-    content: '';
-    transform: translateX(-50%);
-    border: 0.125rem solid #333; }
+
+.module-title:after {
+  position: absolute;
+  bottom: -1.125rem;
+  left: 50%;
+  width: 1.5rem;
+  content: '';
+  transform: translateX(-50%);
+  border: 0.125rem solid #333; }
 
 #social-linkedin {
   background-image: url(../img/icon-social-linkedin.svg); }

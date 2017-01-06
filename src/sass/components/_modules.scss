@@ -13,17 +13,19 @@
     margin-bottom: px-to-rem(4);
 }
 
-.module-title {
+.module-title,
+.project-header .button-cta-oncolor {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    &:after {
-        position: absolute;
-        bottom: - px-to-rem(18);
-        left: 50%;
-        width: px-to-rem(24);
-        content: '';
-        transform: translateX(-50%);
-        border: px-to-rem(2) solid $color-grey;
-    }
+}
+
+.module-title:after {
+    position: absolute;
+    bottom: - px-to-rem(18);
+    left: 50%;
+    width: px-to-rem(24);
+    content: '';
+    transform: translateX(-50%);
+    border: px-to-rem(2) solid $color-grey;
 }

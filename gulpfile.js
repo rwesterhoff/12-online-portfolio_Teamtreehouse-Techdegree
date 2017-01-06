@@ -19,7 +19,8 @@ var paths = {
 gulp.task('scripts', function() {
     return gulp.src([
         paths.js + '/available-js.js',
-        paths.js + '/menu.js'
+        paths.js + '/menu.js',
+        paths.js + '/modules.js'
         ])
         .pipe(concat('main.js'))
         .pipe(gulp.dest(paths.js))
