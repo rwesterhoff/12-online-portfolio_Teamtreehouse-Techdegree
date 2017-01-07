@@ -2,6 +2,58 @@
 var html = document.getElementsByTagName( 'html' )[0];
 html.className = 'js';
 
+function isTouch() {
+ return (('ontouchstart' in window)
+      || (navigator.MaxTouchPoints > 0)
+      || (navigator.msMaxTouchPoints > 0));
+}
+ 
+if (isTouch()) {
+ // alert('this is a touch device');
+} else {
+	 // alert('this is NO touch device');
+ }
+
+// Prepare buttons
+var btnClass = 'button-cta-oncolor';
+
+// Add the buttons to the projects to show the descriptions (progressive enhancement)
+function addButtons() {
+    var projects = document.querySelectorAll('#projects .project-header .content'),
+        length = projects.length;
+
+    // For each project
+    for (var i = 0; i < length; i++) {
+
+        var project = projects[i],
+            button = document.createElement('button'),
+            text = document.createTextNode('View more');
+
+        button.appendChild(text);
+        button.classList = btnClass;
+        button.setAttribute('data-state', 'hidden');;
+        // Add a btn
+        project.appendChild(button);
+    }
+}
+
+function clickButton() {
+    var buttons = document.getElementsByClassName(btnClass),
+        length = buttons.length;
+    console.log(buttons);
+    for (var i = 0; i < length; i++) {
+
+        var button = buttons[i];
+// console.log(button);
+        button.addEventListener('click', function() {
+            console('click');
+        });
+    }
+}
+
+addButtons();
+clickButton();
+dg.nbxkj.nb;fjn 
 // Prepare menu nav and menu to inject HTML
 var menu = document.getElementById('menu'),
     nav = document.getElementById('nav-prim');
@@ -11,16 +63,12 @@ function addToggle(element) {
     // Prepare container and html for injection
     var container = document.createElement('button'),
         html = '';
-    // Add html to be injected in container
-    html += '<svg version="1.1" class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"';
-     html += 'viewBox="0 0 24 20" style="enable-background:new 0 0 24 20;" xml:space="preserve">';
-html += '<style type="text/css">';
-  html +=   '.st0{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-linecap:square;}';
-html += '</style>';
-html += '<path id="hamburger-icon-line_2_" class="st0" d="M2,2h20"/>';
-html += '<path id="hamburger-icon-line_1_" class="st0" d="M2,10h20"/>';
-html += '<path id="hamburger-icon-line" class="st0" d="M2,18h20"/>';
-html += '</svg>';
+
+    html += '<div class="hamburger-icon">';
+    html += '<div class="hamburger-icon-line"></div>';
+    html += '<div class="hamburger-icon-line"></div>';
+    html += '<div class="hamburger-icon-line"></div>';
+    html += '</div>';
     // Inject html into container
     container.innerHTML = html;
     // Inject container before menu
@@ -46,25 +94,3 @@ function toggleMenu() {
 
 addToggle(nav);
 toggleMenu();
-
-// Add the buttons to the projects to show the descriptions (progressive enhancement)
-function addButtons() {
-    var projects = document.querySelectorAll('#projects .project-header .content'),
-        length = projects.length;
-
-    // For each project
-    for (var i = 0; i < length; i++) {
-
-        var project = projects[i]
-        button = document.createElement('button'),
-            text = document.createTextNode('View more');
-
-        button.appendChild(text);
-        button.classList = 'button-cta-oncolor';
-        button.setAttribute('data-state', 'hidden');;
-        // Add a btn
-        project.appendChild(button);
-    }
-}
-
-addButtons();

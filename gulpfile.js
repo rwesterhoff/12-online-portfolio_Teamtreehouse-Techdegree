@@ -7,6 +7,9 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     del = require('del');
 
+var jshint = require('gulp-jshint');
+
+
 var paths = {
     scss: 'src/sass',
     css: 'src/css',
@@ -15,12 +18,20 @@ var paths = {
     js: 'src/js'
 }
 
+
+gulp.task('lint', function() {
+    return gulp.src([paths.js + '/' + '*.js'/*, !(paths.js + '/' + 'main.js') */])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default', { verbose: true }));
+});
+
 // Concat Javascript files
 gulp.task('scripts', function() {
     return gulp.src([
-        paths.js + '/available-js.js',
-        paths.js + '/menu.js',
-        paths.js + '/projects.js'
+            paths.js + '/available-js.js',
+            paths.js + '/touch.js',
+            paths.js + '/projects.js',
+            paths.js + '/menu.js'
         ])
         .pipe(concat('main.js'))
         .pipe(gulp.dest(paths.js))
@@ -28,7 +39,7 @@ gulp.task('scripts', function() {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['scripts','sass'], function() {
+gulp.task('serve', ['scripts', 'sass'], function() {
 
     browserSync.init({
         server: "src"
@@ -62,8 +73,8 @@ gulp.task('clean', function() {
     return del(['dist', 'css', 'img', 'js', '*.html'], { force: true });
 });
 
-gulp.task('build', ['clean'/*, 'purify'*/], function() {
-    return gulp.src([paths.css + '/main.css' , paths.js , paths.img + '/' + '*', paths.html], { base: 'src/' })
+gulp.task('build', ['clean' /*, 'purify'*/ ], function() {
+    return gulp.src([paths.css + '/main.css', paths.js, paths.img + '/' + '*', paths.html], { base: 'src/' })
         .pipe(gulp.dest(''));
 });
 

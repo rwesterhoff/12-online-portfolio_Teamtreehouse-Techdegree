@@ -7,16 +7,12 @@ function addToggle(element) {
     // Prepare container and html for injection
     var container = document.createElement('button'),
         html = '';
-    // Add html to be injected in container
-    html += '<svg version="1.1" class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"';
-     html += 'viewBox="0 0 24 20" style="enable-background:new 0 0 24 20;" xml:space="preserve">';
-html += '<style type="text/css">';
-  html +=   '.st0{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-linecap:square;}';
-html += '</style>';
-html += '<path id="hamburger-icon-line_2_" class="st0" d="M2,2h20"/>';
-html += '<path id="hamburger-icon-line_1_" class="st0" d="M2,10h20"/>';
-html += '<path id="hamburger-icon-line" class="st0" d="M2,18h20"/>';
-html += '</svg>';
+
+    html += '<div class="hamburger-icon">';
+    html += '<div class="hamburger-icon-line"></div>';
+    html += '<div class="hamburger-icon-line"></div>';
+    html += '<div class="hamburger-icon-line"></div>';
+    html += '</div>';
     // Inject html into container
     container.innerHTML = html;
     // Inject container before menu
