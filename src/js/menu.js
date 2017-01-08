@@ -34,7 +34,7 @@ function toggleMenu() {
         // Change appearance of the toggle button when clicked
         button.classList.toggle('clicked');
     });
-};
+}
 
 addToggle(nav);
 toggleMenu();

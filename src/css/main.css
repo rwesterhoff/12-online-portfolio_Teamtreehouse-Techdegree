@@ -225,10 +225,11 @@ button {
 .js .project-header:hover .button-cta-oncolor {
   opacity: 1; }
 
-.js .project-desc {
+.js .project-desc[data-state=hidden] {
   display: none; }
-  .js .project-desc[data-state=visible] {
-    display: block; }
+
+.js .project-desc[data-state=visible] {
+  display: block; }
 
 .project-desc {
   background-color: #F5F5F5;

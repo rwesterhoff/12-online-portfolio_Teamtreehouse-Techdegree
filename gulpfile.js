@@ -18,13 +18,6 @@ var paths = {
     js: 'src/js'
 }
 
-
-gulp.task('lint', function() {
-    return gulp.src([paths.js + '/' + '*.js'/*, !(paths.js + '/' + 'main.js') */])
-    .pipe(jshint())
-    .pipe(jshint.reporter('default', { verbose: true }));
-});
-
 // Concat Javascript files
 gulp.task('scripts', function() {
     return gulp.src([
@@ -33,6 +26,8 @@ gulp.task('scripts', function() {
             paths.js + '/projects.js',
             paths.js + '/menu.js'
         ])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default', { verbose: true }))
         .pipe(concat('main.js'))
         .pipe(gulp.dest(paths.js))
         .pipe(browserSync.stream());
@@ -46,7 +41,9 @@ gulp.task('serve', ['scripts', 'sass'], function() {
     });
 
     gulp.watch(paths.scss + '/' + '**/*.scss', ['sass']);
-    gulp.watch(paths.js + '/' + '*', ['scripts']);
+    gulp.watch([
+        paths.js + '/' + '*', !paths.js + '/' + 'main.js'
+    ], ['scripts']);
     gulp.watch(paths.html).on('change', browserSync.reload);
 });
 
@@ -64,17 +61,31 @@ gulp.task('sass', function() {
 
 gulp.task('purify', ['sass'], function() {
     return gulp.src(paths.css + '/' + 'main.css')
-        .pipe(purify(['src/*.js', 'src/*.html'], { minify: true }))
+        .pipe(purify([
+            'src/*.js',
+            'src/*.html'
+        ], { minify: true }))
         .pipe(rename('main.css'))
         .pipe(gulp.dest('css'));
 });
 
 gulp.task('clean', function() {
-    return del(['dist', 'css', 'img', 'js', '*.html'], { force: true });
+    return del([
+        'dist',
+        'css',
+        'img',
+        'js',
+        '*.html'
+    ], { force: true });
 });
 
 gulp.task('build', ['clean' /*, 'purify'*/ ], function() {
-    return gulp.src([paths.css + '/main.css', paths.js, paths.img + '/' + '*', paths.html], { base: 'src/' })
+    return gulp.src([
+            paths.css + '/main.css',
+            paths.js,
+            paths.img + '/' + '*',
+            paths.html
+        ], { base: 'src/' })
         .pipe(gulp.dest(''));
 });
 
