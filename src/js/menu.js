@@ -1,4 +1,4 @@
-// Prepare menu nav and menu to inject HTML
+// Prepare primary nav and menu to inject HTML
 var menu = document.getElementById('menu'),
     nav = document.getElementById('nav-prim');
 
@@ -8,6 +8,7 @@ function addToggle(element) {
     var container = document.createElement('button'),
         html = '';
 
+    // Populate the html with the correct elements
     html += '<div class="hamburger-icon">';
     html += '<div class="hamburger-icon-line"></div>';
     html += '<div class="hamburger-icon-line"></div>';
@@ -36,5 +37,6 @@ function toggleMenu() {
     });
 }
 
+// Initially:
 addToggle(nav);
 toggleMenu();

@@ -23,6 +23,7 @@ gulp.task('scripts', function() {
     return gulp.src([
             paths.js + '/available-js.js',
             paths.js + '/touch.js',
+            paths.js + '/viewport-width.js',
             paths.js + '/projects.js',
             paths.js + '/menu.js'
         ])
