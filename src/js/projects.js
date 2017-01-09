@@ -60,10 +60,8 @@ function enableClickButton() {
 function showDescription() {
     // Prepare parent 
     var parent = this.parentElement.parentElement.parentElement,
-        // Get id of description
-        descriptionId = parent.getElementsByClassName('project-desc')[0].id,
         // Get description
-        description = document.getElementById(descriptionId);
+        description = document.getElementById('desc-' + parent.id);
     // First hide all
     hideAllDescriptions();
     // Than show correct one
@@ -71,52 +69,57 @@ function showDescription() {
 }
 
 function moveDescriptions() {
+    // Prepare stuff 
+    var step,
+        // Start counting at 1 (e.g. 'project-1')
+        i = 1,
+        // Prepare outer container for insertBefore
+        projectsContainer = document.getElementById('projects'),
+        // Move items according to breakpoints + steps
+        moveItems = function() {
+
+            var stepUp = step + 1;
+            console.log('put every desc inside project');
+            for (i; i <= totalDesc; i++) {
+                // Prepare single description
+                var description = document.getElementById('desc-project-' + [i]),
+                    // Prepare single project
+                    project = document.getElementById('project-' + [i]),
+                    // Get the parent
+                    parent = description.parentElement,
+                    // Copy each description 
+                    clone = description.cloneNode(true),
+                    // Check if the current items index is dividable by the step
+                    checkDivision = i / step,
+                    // Set the reference for insertion 
+                    reference = document.getElementById('project-' + (stepUp));
+
+                // Remove old
+                parent.removeChild(description);
+
+                // check if index is even
+                if (Number.isInteger(checkDivision)) {
+                    stepUp += step;
+                }
+                if (step > 1) {
+                    projectsContainer.insertBefore(clone, reference);
+                } else {
+                    project.appendChild(clone);
+                }
+            }
+        };
+
     // Check breakpoints
     if (bkpSmall) {
-        console.log('put every desc inside project');
-        for (i = 0; i < totalDesc; i++) {
-            // Prepare single description
-            var description = document.getElementById('project-desc-' + [i]),
-                project = document.getElementById('project-' + [i]);
-
-            // Copy each description 
-            // var clone = description.cloneNode;
-
-            // remove old
-            // project.removeChild(description);
-            
-            // insert inside index
-            console.log(description);
-            console.log(project);
-
-        }
+        // Set the step for setting the grid
+        step = 1;
+    } else if (bkpMedium) {
+        step = 2;
+    } else if (bkpLarge || bkpXlarge) {
+        step = 3;
     }
-
-    if (bkpMedium) {
-        console.log('put each 2 descs after even (2,4,6...) project');
-        // Check amount of desc
-        // copy each description 
-        // check if index is < 2
-        // if yes 
-        // insert after project 2
-        // else if index < 2 + 2
-        // insert after project 4
-        // etc...
-        // remove old
-    }
-
-    if (bkpLarge || bkpXlarge) {
-        console.log('put each 3 descs after third (3,6...) project');
-        // Check amount of desc
-        // copy each description 
-        // check if index is < 3
-        // if yes 
-        // insert after project 3
-        // else if index < 3 + 3
-        // insert after project 6
-        // etc...
-        // remove old
-    }
+    // And finally move items
+    moveItems();
 }
 
 // Initially:
