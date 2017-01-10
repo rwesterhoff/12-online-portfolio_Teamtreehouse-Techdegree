@@ -4,7 +4,6 @@ function isTouch() {
 }
  
 if (isTouch()) {
- // alert('this is a touch device');
-} else {
-	 // alert('this is NO touch device');
- }
+ 	// alert('this is a touch device');
+    window.addEventListener('scroll', showButtonsOnScroll);
+}

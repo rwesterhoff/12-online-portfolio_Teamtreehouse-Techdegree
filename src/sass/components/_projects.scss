@@ -17,7 +17,8 @@
         transform: translateY(-50%);
         opacity: 0;
         transition: all linear .2s;
-        &:focus {
+        &:focus,
+        &[data-state=visible] {
             // display:block;
             opacity: 1;
         }

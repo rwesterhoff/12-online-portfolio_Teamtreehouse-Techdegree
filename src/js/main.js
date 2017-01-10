@@ -9,11 +9,9 @@ function isTouch() {
 }
  
 if (isTouch()) {
- // alert('this is a touch device');
-} else {
-	 // alert('this is NO touch device');
- }
-
+ 	// alert('this is a touch device');
+    window.addEventListener('scroll', showButtonsOnScroll);
+}
 // Prepare buttonclass
 var btnClass = 'button-cta-oncolor',
     // Prepare projects
@@ -93,9 +91,9 @@ function moveDescriptions() {
         projectsContainer = document.getElementById('projects'),
         // Move items according to breakpoints + steps
         moveItems = function() {
-
+            // Add step
             var stepUp = step + 1;
-            console.log('put every desc inside project');
+
             for (i; i <= totalDesc; i++) {
                 // Prepare single description
                 var description = document.getElementById('desc-project-' + [i]),
@@ -138,10 +136,50 @@ function moveDescriptions() {
     moveItems();
 }
 
+function showButtonsOnScroll() {
+    var viewPortHeight = window.innerHeight,
+        projectHeaders = document.getElementsByClassName('project-header'),
+        totalHead = projectHeaders.length,
+        viewPortBodyTop = document.body.scrollTop,
+        viewPortRootTop = document.documentElement.scrollTop,
+        viewPortBodyCenter = document.body.scrollTop + (viewPortHeight / 2),
+        viewPortRootCenter = document.documentElement.scrollTop + (viewPortHeight / 2),
+        viewPortBodyBottom = viewPortHeight + viewPortBodyTop,
+        viewPortRootBottom = viewPortHeight + viewPortRootTop,
+        i = 0;
+
+    for (i; i < totalHead; i++) {
+        // Prepare each header
+        var projectHeader = projectHeaders[i],
+            button = projectHeader.querySelector('button'),
+            description = projectHeader.querySelector('button'),
+            headHeight = projectHeader.clientHeight,
+            headTop = projectHeader.offsetTop,
+            headCenter = headTop + (headHeight / 2),
+            headBottom = headTop + headHeight;
+        
+        // Show button on scroll
+        if (
+            viewPortBodyCenter > headTop && viewPortBodyCenter < headBottom 
+            ) {
+            // console.log('>');
+            button.setAttribute('data-state', 'visible');
+        } else {
+            button.setAttribute('data-state', 'hidden');
+        }
+    }
+}
+
 // Initially:
 hideAllDescriptions();
 addButtons();
 enableClickButton();
+
+// Scroll on touch devices
+// if (isTouch) {
+//     window.addEventListener('scroll', showButtonsOnScroll);
+//     alert('touch');
+// }
 
 // Prepare primary nav and menu to inject HTML
 var menu = document.getElementById('menu'),

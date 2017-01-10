@@ -215,7 +215,7 @@ button {
   transform: translateY(-50%);
   opacity: 0;
   transition: all linear .2s; }
-  .js .button-cta-oncolor:focus {
+  .js .button-cta-oncolor:focus, .js .button-cta-oncolor[data-state=visible] {
     opacity: 1; }
 
 .js .project-header:hover .project-title {
