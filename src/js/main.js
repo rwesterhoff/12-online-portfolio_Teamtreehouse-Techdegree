@@ -75,15 +75,20 @@ function showDescription() {
     // Prepare parent 
     var parent = this.parentElement.parentElement.parentElement,
         projectHeader = parent.getElementsByClassName('project-header'),
+        viewPortBodyTop = document.body.scrollTop,
         // Get description
         description = document.getElementById('desc-' + parent.id);
+
     // First hide all
     hideAllDescriptions();
-    // window.scrollTo(0, 400);
-    console.log(parent.offsetTop);
-    window.scrollTo(0, parent.offsetTop);
-    // Than show correct one
-    description.setAttribute('data-state', 'visible');
+    // Scroll to header of clicked project
+    TweenLite.to(window, 0.4, {
+        scrollTo: parent.offsetTop,
+        onComplete: function() {
+            // Than show correct one
+            description.setAttribute('data-state', 'visible');
+        }
+    });
 }
 
 function moveDescriptions() {
@@ -161,11 +166,11 @@ function showButtonsOnScroll() {
             headTop = projectHeader.offsetTop,
             headCenter = headTop + (headHeight / 2),
             headBottom = headTop + headHeight;
-        
+
         // Show button on scroll
         if (
-            viewPortBodyCenter > headTop && viewPortBodyCenter < headBottom 
-            ) {
+            viewPortBodyCenter > headTop && viewPortBodyCenter < headBottom
+        ) {
             // console.log('>');
             button.setAttribute('data-state', 'visible');
         } else {
