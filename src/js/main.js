@@ -74,10 +74,14 @@ function enableClickButton() {
 function showDescription() {
     // Prepare parent 
     var parent = this.parentElement.parentElement.parentElement,
+        projectHeader = parent.getElementsByClassName('project-header'),
         // Get description
         description = document.getElementById('desc-' + parent.id);
     // First hide all
     hideAllDescriptions();
+    // window.scrollTo(0, 400);
+    console.log(parent.offsetTop);
+    window.scrollTo(0, parent.offsetTop);
     // Than show correct one
     description.setAttribute('data-state', 'visible');
 }
@@ -174,12 +178,6 @@ function showButtonsOnScroll() {
 hideAllDescriptions();
 addButtons();
 enableClickButton();
-
-// Scroll on touch devices
-// if (isTouch) {
-//     window.addEventListener('scroll', showButtonsOnScroll);
-//     alert('touch');
-// }
 
 // Prepare primary nav and menu to inject HTML
 var menu = document.getElementById('menu'),
