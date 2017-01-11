@@ -218,22 +218,26 @@ button {
   .js .button-cta-oncolor:focus, .js .button-cta-oncolor[data-state=visible] {
     opacity: 1; }
 
-.js .project-header:hover .project-title {
+.js .project-header[data-state=focus] .project-title, .js .project-header:hover .project-title {
   opacity: 0;
-  transition: all linear .2s; }
+  transition: all linear 0.2s; }
 
-.js .project-header:hover .button-cta-oncolor {
+.js .project-header[data-state=focus] .button-cta-oncolor, .js .project-header:hover .button-cta-oncolor {
   opacity: 1; }
 
-.js .project-desc[data-state=hidden] {
-  display: none; }
-
-.js .project-desc[data-state=visible] {
-  display: block; }
+.js .project-desc {
+  transition: all linear 0.2s;
+  will-change: height; }
+  .js .project-desc[data-state=hidden] {
+    max-height: 0;
+    overflow: hidden; }
+  .js .project-desc[data-state=visible] {
+    max-height: 600px; }
 
 .project-desc {
-  background-color: #F5F5F5;
-  padding: 1.75rem 0.75rem 1.5rem; }
+  background-color: #F5F5F5; }
+  .project-desc .content {
+    padding: 1.75rem 0.75rem 1.5rem; }
 
 #project-1 .project-header {
   background-color: #F8D71C;

@@ -19,34 +19,40 @@
         transition: all linear .2s;
         &:focus,
         &[data-state=visible] {
-            // display:block;
             opacity: 1;
         }
     }
-    .project-header:hover {
-        .project-title {
-            // display: none;
-            opacity: 0;
-            transition: all linear .2s;
-        }
-        .button-cta-oncolor {
-            // display: block;
-            opacity: 1;
+    .project-header {
+        &[data-state=focus],
+        &:hover,
+        {
+            .project-title {
+                opacity: 0;
+                transition: all linear 0.2s;
+            }
+            .button-cta-oncolor {
+                opacity: 1;
+            }
         }
     }
     .project-desc {
+        transition: all linear 0.2s;
+        will-change: height;
         &[data-state=hidden] {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
         }
         &[data-state=visible] {
-            display: block;
+            max-height: 600px;
         }
     }
 }
 
 .project-desc {
     background-color: $color-light-grey;
-    padding: px-to-rem(28) px-to-rem(12) px-to-rem(24);
+    .content {
+        padding: px-to-rem(28) px-to-rem(12) px-to-rem(24);
+    }
 }
 
 #project-1 .project-header {

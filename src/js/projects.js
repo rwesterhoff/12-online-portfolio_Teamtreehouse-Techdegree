@@ -67,14 +67,30 @@ function showDescription() {
 
     // First hide all
     hideAllDescriptions();
+    // Set header back to original state
+
+
+
+
+    /*!!!HIER GEBLEVEN!!!*/
+    
+    // projectHeader.setAttribute('data-state', 'blur');
+    console.log(projectHeader);
+
+
+
+
+
     // Scroll to header of clicked project
-    TweenLite.to(window, 0.4, {
-        scrollTo: parent.offsetTop,
-        onComplete: function() {
-            // Than show correct one
-            description.setAttribute('data-state', 'visible');
-        }
-    });
+    setTimeout(function() {
+        TweenLite.to(window, 0.4, {
+            scrollTo: parent.offsetTop,
+            onComplete: function() {
+                // Than show correct one
+                description.setAttribute('data-state', 'visible');
+            }
+        });
+    }, 200);
 }
 
 function moveDescriptions() {
@@ -146,8 +162,6 @@ function showButtonsOnScroll() {
     for (i; i < totalHead; i++) {
         // Prepare each header
         var projectHeader = projectHeaders[i],
-            button = projectHeader.querySelector('button'),
-            description = projectHeader.querySelector('button'),
             headHeight = projectHeader.clientHeight,
             headTop = projectHeader.offsetTop,
             headCenter = headTop + (headHeight / 2),
@@ -157,10 +171,10 @@ function showButtonsOnScroll() {
         if (
             viewPortBodyCenter > headTop && viewPortBodyCenter < headBottom
         ) {
-            // console.log('>');
-            button.setAttribute('data-state', 'visible');
+            projectHeader.setAttribute('data-state', 'focus');
         } else {
-            button.setAttribute('data-state', 'hidden');
+            projectHeader.setAttribute('data-state', 'blur');
+
         }
     }
 }
