@@ -1,5 +1,6 @@
 // Prepare primary nav and menu to inject HTML
 var menu = document.getElementById('menu'),
+    menuItems = menu.getElementsByTagName('a'),
     nav = document.getElementById('nav-prim');
 
 // Add the toggle to the nav element
@@ -37,6 +38,27 @@ function toggleMenu() {
     });
 }
 
+function enableMenu() {
+    for (i = 0; i < menuItems.length; i++) {
+        // alert(menuItems[i].getAttribute('href'));
+        menuItems[i].addEventListener('click', goToModule);
+    }
+}
+// Navigate and scroll to clicked item
+function goToModule(e) {
+    var href = this.getAttribute('href'),
+        refModule = document.querySelector(href);
+
+    e.preventDefault();
+
+    // Scroll to start of module
+    setTimeout(function() {
+        TweenLite.to(window, 0.4, {
+            scrollTo: refModule
+        });
+    }, 200);
+}
 // Initially:
 addToggle(nav);
 toggleMenu();
+enableMenu();
