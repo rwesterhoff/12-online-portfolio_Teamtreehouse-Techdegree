@@ -22,9 +22,11 @@
     }
 }
 
-.project-title {
+.project-title,
+.button-cta-color {
     display: flex;
     align-self: center;
+    max-width: 1200px;
 }
 
 .tags {
@@ -43,21 +45,18 @@
 }
 
 .js {
-    .button-cta-oncolor {
-        position: relative;
-        top: 50%;
-        transition: all .2s linear;
-        transform: translateY(-50%);
-        opacity: 0;
-        &:focus,
-        &[data-state=visible] {
-            opacity: 1;
-        }
-    }
     .project-header {
         .project-title {
             transition: all .2s linear;
+            overflow: hidden;
             opacity: 1;
+        }
+        .button-cta-oncolor {
+            position: relative;
+            top: 50%;
+            transition: all .2s linear;
+            transform: translateY(-50%);
+            opacity: 0;
         }
         &[data-state=clicked]:after {
             content: ' ';
@@ -76,17 +75,28 @@
         {
             .project-title {
                 opacity: 0;
+                max-width: 0;
+                max-height: 0;
             }
             .button-cta-oncolor {
                 opacity: 1;
+                max-width: 600px;
+                max-height: 600px;
+                padding: 0 px-to-rem(18);
             }
         }
+        &,
         &[data-state=blur] {
             .project-title {
                 opacity: 1;
+                max-width: 600px;
+                max-height: 600px;
             }
             .button-cta-oncolor {
                 opacity: 0;
+                max-width: 0;
+                max-height: 0;
+                padding: 0;
             }
         }
     }
@@ -103,6 +113,7 @@
     }
     .project-desc[data-state=hidden] .content * {
         opacity: 0;
+        transition: opacity 0.2s linear;
     }
     .project-desc[data-state=visible] .content * {
         opacity: 1;

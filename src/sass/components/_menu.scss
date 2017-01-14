@@ -31,7 +31,6 @@
         transition: all .1s;
         background-color: $color-white;
         margin: px-to-rem(4) 0;
-
     }
     &.clicked {
         .hamburger-icon-line {
@@ -53,11 +52,11 @@
 /* Toggle visibility menu */
 
 .menu-closed {
-    display: none;
+display: none;
 }
 
 .menu-open {
-    display: block;
+    display:block;
 }
 
 

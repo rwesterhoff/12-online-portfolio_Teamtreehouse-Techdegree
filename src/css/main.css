@@ -221,11 +221,13 @@ button {
     width: 100%;
     padding: 1.75rem 0.75rem 1.5rem; }
 
-.project-title {
+.project-title,
+.button-cta-color {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
-  align-self: center; }
+  align-self: center;
+  max-width: 1200px; }
 
 .tags {
   font-size: 0; }
@@ -240,18 +242,17 @@ button {
   text-transform: uppercase;
   color: #333; }
 
-.js .button-cta-oncolor {
+.js .project-header .project-title {
+  transition: all .2s linear;
+  overflow: hidden;
+  opacity: 1; }
+
+.js .project-header .button-cta-oncolor {
   position: relative;
   top: 50%;
   transition: all .2s linear;
   transform: translateY(-50%);
   opacity: 0; }
-  .js .button-cta-oncolor:focus, .js .button-cta-oncolor[data-state=visible] {
-    opacity: 1; }
-
-.js .project-header .project-title {
-  transition: all .2s linear;
-  opacity: 1; }
 
 .js .project-header[data-state=clicked]:after {
   content: ' ';
@@ -266,16 +267,26 @@ button {
   z-index: 999; }
 
 .js .project-header[data-state=focus] .project-title, .js .project-header:hover .project-title {
-  opacity: 0; }
+  opacity: 0;
+  max-width: 0;
+  max-height: 0; }
 
 .js .project-header[data-state=focus] .button-cta-oncolor, .js .project-header:hover .button-cta-oncolor {
-  opacity: 1; }
+  opacity: 1;
+  max-width: 600px;
+  max-height: 600px;
+  padding: 0 1.125rem; }
 
-.js .project-header[data-state=blur] .project-title {
-  opacity: 1; }
+.js .project-header .project-title, .js .project-header[data-state=blur] .project-title {
+  opacity: 1;
+  max-width: 600px;
+  max-height: 600px; }
 
-.js .project-header[data-state=blur] .button-cta-oncolor {
-  opacity: 0; }
+.js .project-header .button-cta-oncolor, .js .project-header[data-state=blur] .button-cta-oncolor {
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+  padding: 0; }
 
 .js .project-desc {
   transition: all .2s linear;
@@ -287,7 +298,8 @@ button {
     max-height: 600px; }
 
 .js .project-desc[data-state=hidden] .content * {
-  opacity: 0; }
+  opacity: 0;
+  transition: opacity 0.2s linear; }
 
 .js .project-desc[data-state=visible] .content * {
   opacity: 1;
