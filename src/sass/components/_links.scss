@@ -1,18 +1,37 @@
 [class^=link] {
-    display: table;
     position: relative;
     left: 50%;
-    transform: translateX(-50%);
-    padding: px-to-rem(7.5) px-to-rem(18);
-    border-radius: px-to-rem(18);
+    display: table;
     margin: px-to-rem(12) 0;
+    padding: px-to-rem(7.5) px-to-rem(18);
+    transform: translateX(-50%);
+    border-radius: px-to-rem(18);
 }
 
 .link-sec {
     background-color: transparent;
+    &:after {
+        position: absolute;
+        bottom: - px-to-rem(2);
+        left: 50%;
+        width: px-to-rem(0);
+        content: '';
+        transition: all .2s linear;
+        transform: translateX(-50%);
+        border: px-to-rem(2) solid transparent;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        &:after {
+            width: px-to-rem(24);
+            transition: all .2s linear;
+            border: px-to-rem(2) solid $color-link;
+        }
+    }
 }
 
 .link-cta {
-    background-color: $color-grey;
     color: $color-white;
+    background-color: $color-grey;
 }

@@ -202,20 +202,33 @@ button {
   background-color: #fff; }
 
 [class^=link] {
-  display: table;
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
+  display: table;
+  margin: 0.75rem 0;
   padding: 0.46875rem 1.125rem;
-  border-radius: 1.125rem;
-  margin: 0.75rem 0; }
+  transform: translateX(-50%);
+  border-radius: 1.125rem; }
 
 .link-sec {
   background-color: transparent; }
+  .link-sec:after {
+    position: absolute;
+    bottom: -0.125rem;
+    left: 50%;
+    width: 0rem;
+    content: '';
+    transition: all .2s linear;
+    transform: translateX(-50%);
+    border: 0.125rem solid transparent; }
+  .link-sec:hover:after, .link-sec:focus:after, .link-sec:active:after {
+    width: 1.5rem;
+    transition: all .2s linear;
+    border: 0.125rem solid #238EC4; }
 
 .link-cta {
-  background-color: #333;
-  color: #fff; }
+  color: #fff;
+  background-color: #333; }
 
 .project-header {
   position: relative;
