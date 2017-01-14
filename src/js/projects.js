@@ -60,14 +60,14 @@ function enableClickButton() {
 function showDescription() {
     // Prepare parent 
     var parent = this.parentElement.parentElement.parentElement,
-        projectHeader = parent.getElementsByClassName('project-header'),
+        projectHeader = parent.querySelector('.project-header'),
+        projectHeaders = document.querySelectorAll('.project-header'),
         viewPortBodyTop = document.body.scrollTop,
         // Get description
         description = document.getElementById('desc-' + parent.id);
 
     // First hide all
     hideAllDescriptions();
-
     // Scroll to header of clicked project
     setTimeout(function() {
         TweenLite.to(window, 0.4, {
@@ -75,6 +75,12 @@ function showDescription() {
             onComplete: function() {
                 // Than show correct one
                 description.setAttribute('data-state', 'visible');
+                for (i = 0; i < projectHeaders.length; i++) {
+                    // Reset each header
+                    projectHeaders[i].removeAttribute('data-state', 'clicked');
+                }
+                // Make header show as being 'clicked'
+                projectHeader.setAttribute('data-state', 'clicked');
 
             }
         });

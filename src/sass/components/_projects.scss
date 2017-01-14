@@ -1,4 +1,5 @@
 .project-header {
+    position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -11,10 +12,10 @@
 }
 
 .project-desc {
-    display:flex;
-    align-items: center;
+    display: flex;
     width: 100%;
     background-color: $color-light-grey;
+    align-items: center;
     .content {
         width: 100%;
         padding: px-to-rem(28) px-to-rem(12) px-to-rem(24);
@@ -58,6 +59,18 @@
             transition: all .2s linear;
             opacity: 1;
         }
+        &[data-state=clicked]:after {
+            content: ' ';
+            height: 0;
+            position: absolute;
+            width: 0;
+            border: px-to-rem(12) solid transparent;
+            border-bottom-color: $color-light-grey;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+        }
         &[data-state=focus],
         &:hover,
         {
@@ -78,7 +91,7 @@
         }
     }
     .project-desc {
-        transition: all 0.2s linear;
+        transition: all .2s linear;
         will-change: height;
         &[data-state=hidden] {
             overflow: hidden;
@@ -157,7 +170,6 @@
 .project-header:after,
 .project-desc:after {
     display: table;
-    content: '';
     clear: both;
+    content: '';
 }
-
