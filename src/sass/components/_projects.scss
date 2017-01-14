@@ -96,16 +96,17 @@
         &[data-state=hidden] {
             overflow: hidden;
             max-height: 0;
-            & .content * {
-                opacity: 0;
-            }
         }
         &[data-state=visible] {
             max-height: 600px;
-            & .content * {
-                opacity: 1;
-            }
         }
+    }
+    .project-desc[data-state=hidden] .content * {
+        opacity: 0;
+    }
+    .project-desc[data-state=visible] .content * {
+        opacity: 1;
+        transition: opacity 0.4s linear 0.2s;
     }
 }
 

@@ -283,12 +283,15 @@ button {
   .js .project-desc[data-state=hidden] {
     overflow: hidden;
     max-height: 0; }
-    .js .project-desc[data-state=hidden] .content * {
-      opacity: 0; }
   .js .project-desc[data-state=visible] {
     max-height: 600px; }
-    .js .project-desc[data-state=visible] .content * {
-      opacity: 1; }
+
+.js .project-desc[data-state=hidden] .content * {
+  opacity: 0; }
+
+.js .project-desc[data-state=visible] .content * {
+  opacity: 1;
+  transition: opacity 0.4s linear 0.2s; }
 
 #project-1 .project-header {
   background-color: #F8D71C;
