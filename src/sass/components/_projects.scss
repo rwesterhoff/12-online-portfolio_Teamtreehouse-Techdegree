@@ -57,18 +57,11 @@
             transition: all .2s linear;
             transform: translateY(-50%);
             opacity: 0;
-        }
-        &[data-state=clicked]:after {
-            content: ' ';
-            height: 0;
-            position: absolute;
-            width: 0;
-            border: px-to-rem(12) solid transparent;
-            border-bottom-color: $color-light-grey;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 999;
+            &:focus,
+            &:active {
+                outline: none;
+                border: 0;
+            }
         }
         &[data-state=focus],
         &:hover,
@@ -83,9 +76,11 @@
                 max-width: 600px;
                 max-height: 600px;
                 padding: 0 px-to-rem(18);
+                cursor: pointer;
             }
         }
         &,
+        &[data-state=clicked],
         &[data-state=blur] {
             .project-title {
                 opacity: 1;
@@ -97,7 +92,20 @@
                 max-width: 0;
                 max-height: 0;
                 padding: 0;
+                cursor: initial;
             }
+        }
+        &[data-state=clicked]:after {
+            content: ' ';
+            height: 0;
+            position: absolute;
+            width: 0;
+            border: px-to-rem(12) solid transparent;
+            border-bottom-color: $color-light-grey;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
         }
     }
     .project-desc {
