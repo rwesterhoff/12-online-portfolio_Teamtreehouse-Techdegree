@@ -1,16 +1,6 @@
-.module:after {
-    display: table;
-    content: '';
-    clear: both;
-}
-
 .module > header {
     position: relative;
     height: px-to-rem(108);
-}
-
-.module-item:not(:last-child) {
-    margin-bottom: px-to-rem(4);
 }
 
  .module-title {
@@ -27,4 +17,17 @@
     content: '';
     transform: translateX(-50%);
     border: px-to-rem(2) solid $color-grey;
+}
+
+.module-item{
+    margin-top: px-to-rem(4);
+}
+
+.module:after,
+.module-item:after,
+.module:before,
+.module-item:before {
+    display: table;
+    content: '';
+    clear: both;
 }

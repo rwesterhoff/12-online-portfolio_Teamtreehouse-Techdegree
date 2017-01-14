@@ -1,115 +1,23 @@
 .project-header {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
     @include aspect-ratio(296, 120);
     background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
     & .content {
         display: flex;
         justify-content: center;
     }
 }
 
-.js {
-    .button-cta-oncolor {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0;
-        transition: all linear .2s;
-        &:focus,
-        &[data-state=visible] {
-            opacity: 1;
-        }
-    }
-    .project-header {
-        &[data-state=focus],
-        &:hover,
-        {
-            .project-title {
-                opacity: 0;
-                transition: all linear 0.2s;
-            }
-            .button-cta-oncolor {
-                opacity: 1;
-            }
-        }
-    }
-    .project-desc {
-        transition: all linear 0.2s;
-        will-change: height;
-        &[data-state=hidden] {
-            max-height: 0;
-            overflow: hidden;
-        }
-        &[data-state=visible] {
-            max-height: 600px;
-        }
-    }
-}
-
 .project-desc {
+    display:flex;
+    align-items: center;
+    width: 100%;
     background-color: $color-light-grey;
     .content {
+        width: 100%;
         padding: px-to-rem(28) px-to-rem(12) px-to-rem(24);
-    }
-}
-
-#project-1 .project-header {
-    background-color: $color-ripe-lemon;
-    background-image: url(#{$path-img}responsive.jpg)
-}
-
-#project-2 .project-header {
-    background-color: $color-curious-blue;
-    background-image: url(#{$path-img}forms.jpg)
-}
-
-#project-3 .project-header {
-    background-color: $color-outrageous-orange;
-    background-image: url(#{$path-img}video.jpg)
-}
-
-#project-4 .project-header {
-    background-color: $color-chateau-green;
-    background-image: url(#{$path-img}charts.jpg)
-}
-
-#project-5 .project-header {
-    background-color: $color-medium-purple;
-    background-image: url(#{$path-img}api.jpg)
-}
-
-#project-6 .project-header {
-    background-color: $color-pelorous;
-    background-image: url(#{$path-img}performance.jpg)
-}
-
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-    #project-1 .project-header {
-        background-color: $color-ripe-lemon;
-        background-image: url(#{$path-img}responsive@2x.jpg)
-    }
-    #project-2 .project-header {
-        background-color: $color-curious-blue;
-        background-image: url(#{$path-img}forms@2x.jpg)
-    }
-    #project-3 .project-header {
-        background-color: $color-outrageous-orange;
-        background-image: url(#{$path-img}video@2x.jpg)
-    }
-    #project-4 .project-header {
-        background-color: $color-chateau-green;
-        background-image: url(#{$path-img}charts@2x.jpg)
-    }
-    #project-5 .project-header {
-        background-color: $color-medium-purple;
-        background-image: url(#{$path-img}api@2x.jpg)
-    }
-    #project-6 .project-header {
-        background-color: $color-pelorous;
-        background-image: url(#{$path-img}performance@2x.jpg)
     }
 }
 
@@ -127,8 +35,129 @@
     font-size: px-to-rem(12);
     font-weight: 400;
     display: inline-block;
+    margin: px-to-rem(4) px-to-rem(12);
     letter-spacing: 4.5px;
     text-transform: uppercase;
     color: $color-grey;
-    margin: px-to-rem(4) px-to-rem(12);
 }
+
+.js {
+    .button-cta-oncolor {
+        position: relative;
+        top: 50%;
+        transition: all .2s linear;
+        transform: translateY(-50%);
+        opacity: 0;
+        &:focus,
+        &[data-state=visible] {
+            opacity: 1;
+        }
+    }
+    .project-header {
+        .project-title {
+            transition: all .2s linear;
+            opacity: 1;
+        }
+        &[data-state=focus],
+        &:hover,
+        {
+            .project-title {
+                opacity: 0;
+            }
+            .button-cta-oncolor {
+                opacity: 1;
+            }
+        }
+        &[data-state=blur] {
+            .project-title {
+                opacity: 1;
+            }
+            .button-cta-oncolor {
+                opacity: 0;
+            }
+        }
+    }
+    .project-desc {
+        transition: all 0.2s linear;
+        will-change: height;
+        &[data-state=hidden] {
+            overflow: hidden;
+            max-height: 0;
+            & .content * {
+                opacity: 0;
+            }
+        }
+        &[data-state=visible] {
+            max-height: 600px;
+            & .content * {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#project-1 .project-header {
+    background-color: $color-ripe-lemon;
+    background-image: url(#{$path-img}responsive.jpg);
+}
+
+#project-2 .project-header {
+    background-color: $color-curious-blue;
+    background-image: url(#{$path-img}forms.jpg);
+}
+
+#project-3 .project-header {
+    background-color: $color-outrageous-orange;
+    background-image: url(#{$path-img}video.jpg);
+}
+
+#project-4 .project-header {
+    background-color: $color-chateau-green;
+    background-image: url(#{$path-img}charts.jpg);
+}
+
+#project-5 .project-header {
+    background-color: $color-medium-purple;
+    background-image: url(#{$path-img}api.jpg);
+}
+
+#project-6 .project-header {
+    background-color: $color-pelorous;
+    background-image: url(#{$path-img}performance.jpg);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    #project-1 .project-header {
+        background-color: $color-ripe-lemon;
+        background-image: url(#{$path-img}responsive@2x.jpg);
+    }
+    #project-2 .project-header {
+        background-color: $color-curious-blue;
+        background-image: url(#{$path-img}forms@2x.jpg);
+    }
+    #project-3 .project-header {
+        background-color: $color-outrageous-orange;
+        background-image: url(#{$path-img}video@2x.jpg);
+    }
+    #project-4 .project-header {
+        background-color: $color-chateau-green;
+        background-image: url(#{$path-img}charts@2x.jpg);
+    }
+    #project-5 .project-header {
+        background-color: $color-medium-purple;
+        background-image: url(#{$path-img}api@2x.jpg);
+    }
+    #project-6 .project-header {
+        background-color: $color-pelorous;
+        background-image: url(#{$path-img}performance@2x.jpg);
+    }
+}
+
+.project-header:after,
+.project-desc:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+

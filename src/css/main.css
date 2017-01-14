@@ -187,11 +187,11 @@ button {
   color: #fff; }
 
 .project-header {
-  position: relative;
-  background-blend-mode: multiply;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: 100%;
-  background-position: center; }
+  position: relative;
+  background-blend-mode: multiply; }
   .project-header:before {
     display: block;
     content: "";
@@ -209,35 +209,73 @@ button {
     -ms-flex-pack: center;
     justify-content: center; }
 
+.project-desc {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: #F5F5F5; }
+  .project-desc .content {
+    width: 100%;
+    padding: 1.75rem 0.75rem 1.5rem; }
+
+.project-title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+  align-self: center; }
+
+.tags {
+  font-size: 0; }
+
+.tag {
+  font-family: "futura-pt", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: inline-block;
+  margin: 0.25rem 0.75rem;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  color: #333; }
+
 .js .button-cta-oncolor {
   position: relative;
   top: 50%;
+  transition: all .2s linear;
   transform: translateY(-50%);
-  opacity: 0;
-  transition: all linear .2s; }
+  opacity: 0; }
   .js .button-cta-oncolor:focus, .js .button-cta-oncolor[data-state=visible] {
     opacity: 1; }
 
+.js .project-header .project-title {
+  transition: all .2s linear;
+  opacity: 1; }
+
 .js .project-header[data-state=focus] .project-title, .js .project-header:hover .project-title {
-  opacity: 0;
-  transition: all linear 0.2s; }
+  opacity: 0; }
 
 .js .project-header[data-state=focus] .button-cta-oncolor, .js .project-header:hover .button-cta-oncolor {
   opacity: 1; }
 
+.js .project-header[data-state=blur] .project-title {
+  opacity: 1; }
+
+.js .project-header[data-state=blur] .button-cta-oncolor {
+  opacity: 0; }
+
 .js .project-desc {
-  transition: all linear 0.2s;
+  transition: all 0.2s linear;
   will-change: height; }
   .js .project-desc[data-state=hidden] {
-    max-height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    max-height: 0; }
+    .js .project-desc[data-state=hidden] .content * {
+      opacity: 0; }
   .js .project-desc[data-state=visible] {
     max-height: 600px; }
-
-.project-desc {
-  background-color: #F5F5F5; }
-  .project-desc .content {
-    padding: 1.75rem 0.75rem 1.5rem; }
+    .js .project-desc[data-state=visible] .content * {
+      opacity: 1; }
 
 #project-1 .project-header {
   background-color: #F8D71C;
@@ -283,26 +321,8 @@ button {
     background-color: #35BCBC;
     background-image: url(../img/performance@2x.jpg); } }
 
-.project-title {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: center;
-  align-self: center; }
-
-.tags {
-  font-size: 0; }
-
-.tag {
-  font-family: "futura-pt", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 400;
-  display: inline-block;
-  letter-spacing: 4.5px;
-  text-transform: uppercase;
-  color: #333;
-  margin: 0.25rem 0.75rem; }
-
-.module:after {
+.project-header:after,
+.project-desc:after {
   display: table;
   content: '';
   clear: both; }
@@ -310,9 +330,6 @@ button {
 .module > header {
   position: relative;
   height: 6.75rem; }
-
-.module-item:not(:last-child) {
-  margin-bottom: 0.25rem; }
 
 .module-title {
   position: relative;
@@ -327,6 +344,17 @@ button {
   content: '';
   transform: translateX(-50%);
   border: 0.125rem solid #333; }
+
+.module-item {
+  margin-top: 0.25rem; }
+
+.module:after,
+.module-item:after,
+.module:before,
+.module-item:before {
+  display: table;
+  content: '';
+  clear: both; }
 
 #social-linkedin {
   background-image: url(../img/icon-social-linkedin.svg); }

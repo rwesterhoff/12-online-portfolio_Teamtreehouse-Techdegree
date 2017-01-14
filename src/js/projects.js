@@ -67,19 +67,6 @@ function showDescription() {
 
     // First hide all
     hideAllDescriptions();
-    // Set header back to original state
-
-
-
-
-    /*!!!HIER GEBLEVEN!!!*/
-    
-    // projectHeader.setAttribute('data-state', 'blur');
-    console.log(projectHeader);
-
-
-
-
 
     // Scroll to header of clicked project
     setTimeout(function() {
@@ -88,6 +75,7 @@ function showDescription() {
             onComplete: function() {
                 // Than show correct one
                 description.setAttribute('data-state', 'visible');
+
             }
         });
     }, 200);
