@@ -82,27 +82,34 @@ function showDescription() {
         projectHeaders = document.querySelectorAll('.project-header'),
         viewPortBodyTop = document.body.scrollTop,
         // Get description
-        description = document.getElementById('desc-' + parent.id);
+        description = document.getElementById('desc-' + parent.id),
+        hideAllShowOne = function() {
+            // Remove all 'clicked' states
+            for (i = 0; i < projectHeaders.length; i++) {
+                // Reset each header
+                projectHeaders[i].removeAttribute('data-state', 'clicked');
+            }
+            // Than show correct one
+            description.setAttribute('data-state', 'visible');
+            // Make header show as being 'clicked'
+            projectHeader.setAttribute('data-state', 'clicked');
+
+        };
 
     // First hide all
     hideAllDescriptions();
-    // Scroll to header of clicked project
-    setTimeout(function() {
-        TweenLite.to(window, 0.4, {
-            scrollTo: parent.offsetTop,
-            onComplete: function() {
-                // Than show correct one
-                description.setAttribute('data-state', 'visible');
-                for (i = 0; i < projectHeaders.length; i++) {
-                    // Reset each header
-                    projectHeaders[i].removeAttribute('data-state', 'clicked');
-                }
-                // Make header show as being 'clicked'
-                projectHeader.setAttribute('data-state', 'clicked');
+    if (viewPortBodyTop !== parent.offsetTop) {
+        setTimeout(function() {
+            // Scroll to header of clicked project
+            TweenLite.to(window, 0.4, {
+                scrollTo: parent.offsetTop,
+                onComplete: hideAllShowOne
+            });
+        }, 200);
 
-            }
-        });
-    }, 200);
+    } else {
+        hideAllShowOne();
+    }
 }
 
 function moveDescriptions() {
@@ -192,7 +199,7 @@ function showButtonsOnScroll() {
 }
 
 // Check if device is NOT iOS
-if (!iOS) { 
+if (!iOS) {
     // Initially:
     hideAllDescriptions();
     addButtons();
