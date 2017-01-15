@@ -77,6 +77,7 @@
                 cursor: pointer;
             }
         }
+        &,
         &[data-state=clicked],
         &[data-state=clicked]:focus,
         &[data-state=blur] {
