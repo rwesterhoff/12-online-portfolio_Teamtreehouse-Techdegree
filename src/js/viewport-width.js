@@ -1,3 +1,10 @@
+/* ---------------------------------------------------------------------- *\
+    VIEWPORT WIDTH
+    This check is needed for moving around the project 
+    descriptions in the DOM. If the screen is a 2 or 3 column grid, 
+    the desciptions need to appear below all project headers of the row.
+\* ---------------------------------------------------------------------- */
+
 // Prepare breakpoints
 var small = 320,
     medium = 768,
@@ -61,3 +68,4 @@ function checkViewportSize() {
 // Listen to resizing the window
 window.addEventListener('load', checkViewportSize);
 window.addEventListener('resize', checkViewportSize);
+

@@ -1,3 +1,10 @@
+/* ---------------------------------------------------------------------- *\
+    PROJECTS
+    Injecting 'View more' buttons and showing, hiding and moving around
+    project descriptions in the DOM. The TweenLite scrollTo Plugin is
+    used again for some smooth scrolling.
+\* ---------------------------------------------------------------------- */
+
 // Prepare buttonclass
 var btnClass = 'button-cta-oncolor',
     // Prepare projects
@@ -80,17 +87,21 @@ function showDescription() {
 
     // First hide all
     hideAllDescriptions();
+    // Check if project header is in the correct position
     if (viewPortBodyTop !== parent.offsetTop) {
         setTimeout(function() {
             // Scroll to header of clicked project
             TweenLite.to(window, 0.4, {
                 scrollTo: parent.offsetTop,
+                // And hide all / show clicked description
                 onComplete: hideAllShowOne
             });
         }, 200);
 
     } else {
-        hideAllShowOne();
+        setTimeout(function() {
+            hideAllShowOne();
+        }, 400);
     }
 }
 
@@ -187,3 +198,4 @@ if (!iOS) {
     addButtons();
     enableClickButton();
 }
+

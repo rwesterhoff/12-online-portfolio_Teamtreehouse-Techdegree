@@ -1,4 +1,11 @@
-// Inject class for progressive enhancement if Javascript is loaded
+/* ---------------------------------------------------------------------- *\
+	AVAILABLE JS
+	Inject class for progressive enhancement if Javascript is loaded. 
+	Because a lot is not working properly in iOS, I only do this if it's NOT
+	a iOS device. I consider this being part of the progressive enhancement.
+\* ---------------------------------------------------------------------- */
+
+// Prepare html
 var html = document.getElementsByTagName('html')[0];
 // Prepare iOS sniffing
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -6,6 +13,14 @@ var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if (!iOS) {
     html.className = 'js';
 }
+
+
+/* ---------------------------------------------------------------------- *\
+	TOUCH
+	The 'View more' buttons appear on hover over the project headers. 
+	As this doesn't work on touch devices, they appear on scroll. Only if 
+	the headers are in the middle of the screen.
+\* ---------------------------------------------------------------------- */
 
 // Detect touchpoints of device in order to check if it's a Touchdevice
 function isTouch() {
@@ -16,6 +31,15 @@ if (isTouch()) {
  	// alert('this is a touch device');
     window.addEventListener('scroll', showButtonsOnScroll);
 }
+
+
+/* ---------------------------------------------------------------------- *\
+    PROJECTS
+    Injecting 'View more' buttons and showing, hiding and moving around
+    project descriptions in the DOM. The TweenLite scrollTo Plugin is
+    used again for some smooth scrolling.
+\* ---------------------------------------------------------------------- */
+
 // Prepare buttonclass
 var btnClass = 'button-cta-oncolor',
     // Prepare projects
@@ -98,17 +122,21 @@ function showDescription() {
 
     // First hide all
     hideAllDescriptions();
+    // Check if project header is in the correct position
     if (viewPortBodyTop !== parent.offsetTop) {
         setTimeout(function() {
             // Scroll to header of clicked project
             TweenLite.to(window, 0.4, {
                 scrollTo: parent.offsetTop,
+                // And hide all / show clicked description
                 onComplete: hideAllShowOne
             });
         }, 200);
 
     } else {
-        hideAllShowOne();
+        setTimeout(function() {
+            hideAllShowOne();
+        }, 400);
     }
 }
 
@@ -206,6 +234,15 @@ if (!iOS) {
     enableClickButton();
 }
 
+
+/* ---------------------------------------------------------------------- *\
+    MENU
+    Plain and simple hamburger menu with injection of states to 
+    change the appearance of the hamburger and for showing and 
+    hiding the menu. Other than that a simple GSAP TweenLite scrollTo 
+    Plugin is use for some smooth scrolling.
+\* ---------------------------------------------------------------------- */
+
 // Prepare primary nav and menu to inject HTML
 var menu = document.getElementById('menu'),
     menuItems = menu.getElementsByTagName('a'),
@@ -271,6 +308,14 @@ addToggle(nav);
 toggleMenu();
 enableMenu();
 
+
+/* ---------------------------------------------------------------------- *\
+    VIEWPORT WIDTH
+    This check is needed for moving around the project 
+    descriptions in the DOM. If the screen is a 2 or 3 column grid, 
+    the desciptions need to appear below all project headers of the row.
+\* ---------------------------------------------------------------------- */
+
 // Prepare breakpoints
 var small = 320,
     medium = 768,
@@ -334,3 +379,4 @@ function checkViewportSize() {
 // Listen to resizing the window
 window.addEventListener('load', checkViewportSize);
 window.addEventListener('resize', checkViewportSize);
+

@@ -1,3 +1,11 @@
+/* ---------------------------------------------------------------------- *\
+    MENU
+    Plain and simple hamburger menu with injection of states to 
+    change the appearance of the hamburger and for showing and 
+    hiding the menu. Other than that a simple GSAP TweenLite scrollTo 
+    Plugin is use for some smooth scrolling.
+\* ---------------------------------------------------------------------- */
+
 // Prepare primary nav and menu to inject HTML
 var menu = document.getElementById('menu'),
     menuItems = menu.getElementsByTagName('a'),
@@ -62,3 +70,4 @@ function goToModule(e) {
 addToggle(nav);
 toggleMenu();
 enableMenu();
+
