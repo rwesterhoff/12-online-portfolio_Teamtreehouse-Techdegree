@@ -11,7 +11,7 @@ var html = document.getElementsByTagName('html')[0];
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 // Set class if device is NOT iOS
 if (!iOS) {
-    html.className = 'js';
+    html.classList.add('js');
 }
 
 
