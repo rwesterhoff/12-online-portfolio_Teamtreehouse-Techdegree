@@ -3,7 +3,11 @@
    License: none (public domain)
 */
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -143,10 +147,9 @@ a {
   margin: 1.125rem auto 0;
   cursor: pointer;
   border-radius: 50%;
-  background-color: transparent;
-  padding: 0; }
+  padding: 0;
+  background-color: transparent; }
   .menu-toggle:hover, .menu-toggle:focus {
-    background-color: white;
     outline: 0;
     border: none; }
     .menu-toggle:hover .hamburger-icon-line, .menu-toggle:focus .hamburger-icon-line {
@@ -162,7 +165,8 @@ a {
     height: 0.25rem;
     transition: all .1s;
     background-color: #fff;
-    margin: 0.25rem 0; }
+    margin: 0.25rem 0;
+    transition: all .2s linear; }
   .menu-toggle.clicked .hamburger-icon-line {
     transform-origin: center; }
   .menu-toggle.clicked .hamburger-icon-line:nth-child(1) {
@@ -187,7 +191,6 @@ a {
   color: #fff; }
 
 button {
-  display: inline-block;
   height: 2.25rem;
   padding: 0 1.125rem;
   cursor: pointer;
@@ -221,10 +224,13 @@ button {
     transition: all .2s linear;
     transform: translateX(-50%);
     border: 0.125rem solid transparent; }
-  .link-sec:hover:after, .link-sec:focus:after, .link-sec:active:after {
-    width: 1.5rem;
-    transition: all .2s linear;
-    border: 0.125rem solid #238EC4; }
+  .link-sec:hover, .link-sec:focus, .link-sec:active {
+    outline: none;
+    border: 0; }
+    .link-sec:hover:after, .link-sec:focus:after, .link-sec:active:after {
+      width: 1.5rem;
+      transition: all .2s linear;
+      border: 0.125rem solid #238EC4; }
 
 .link-cta {
   color: #fff;
@@ -251,6 +257,8 @@ button {
   .project-header .content {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-pack: center;
     justify-content: center; }
 
@@ -292,16 +300,14 @@ button {
   opacity: 1; }
 
 .js .project-header .button-cta-oncolor {
-  position: relative;
-  top: 50%;
   transition: all .2s linear;
-  transform: translateY(-50%);
   opacity: 0; }
   .js .project-header .button-cta-oncolor:focus, .js .project-header .button-cta-oncolor:active {
     outline: none;
     border: 0; }
 
 .js .project-header[data-state=focus] .project-title, .js .project-header:hover .project-title {
+  visibility: hidden;
   opacity: 0;
   max-width: 0;
   max-height: 0; }
@@ -402,7 +408,7 @@ button {
 .project-desc:after {
   display: table;
   clear: both;
-  content: ''; }
+  content: ' '; }
 
 .module > header {
   position: relative;

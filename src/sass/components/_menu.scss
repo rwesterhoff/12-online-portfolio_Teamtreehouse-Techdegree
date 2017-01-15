@@ -42,11 +42,10 @@
     margin: px-to-rem(18) auto 0;
     cursor: pointer;
     border-radius: 50%;
-    background-color: transparent;
     padding: 0;
+    background-color: transparent;
     &:hover,
     &:focus {
-        background-color: white;
         outline: 0;
         border: none;
         .hamburger-icon-line {
@@ -66,6 +65,7 @@
         transition: all .1s;
         background-color: $color-white;
         margin: px-to-rem(4) 0;
+        transition: all .2s linear;
     }
     &.clicked {
         .hamburger-icon-line {
