@@ -173,7 +173,10 @@ function showButtonsOnScroll() {
     }
 }
 
-// Initially:
-hideAllDescriptions();
-addButtons();
-enableClickButton();
+// Check if device is NOT iOS
+if (!iOS) { 
+    // Initially:
+    hideAllDescriptions();
+    addButtons();
+    enableClickButton();
+}

@@ -65,7 +65,6 @@
         &:hover,
         {
             .project-title {
-                visibility: hidden;
                 opacity: 0;
                 max-width: 0;
                 max-height: 0;
@@ -78,8 +77,8 @@
                 cursor: pointer;
             }
         }
-        &,
         &[data-state=clicked],
+        &[data-state=clicked]:focus,
         &[data-state=blur] {
             .project-title {
                 opacity: 1;

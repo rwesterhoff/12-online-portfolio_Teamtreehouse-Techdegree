@@ -1,7 +1,11 @@
 // Inject class for progressive enhancement if Javascript is loaded
-var html = document.getElementsByTagName( 'html' )[0];
-// Set class
-html.className = 'js';
+var html = document.getElementsByTagName('html')[0];
+// Prepare iOS sniffing
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+// Set class if device is NOT iOS
+if (!iOS) {
+    html.className = 'js';
+}
 
 // Detect touchpoints of device in order to check if it's a Touchdevice
 function isTouch() {
@@ -187,10 +191,13 @@ function showButtonsOnScroll() {
     }
 }
 
-// Initially:
-hideAllDescriptions();
-addButtons();
-enableClickButton();
+// Check if device is NOT iOS
+if (!iOS) { 
+    // Initially:
+    hideAllDescriptions();
+    addButtons();
+    enableClickButton();
+}
 
 // Prepare primary nav and menu to inject HTML
 var menu = document.getElementById('menu'),
