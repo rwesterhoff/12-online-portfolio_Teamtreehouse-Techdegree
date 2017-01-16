@@ -1,3 +1,5 @@
+/* Projects */
+
 .project-header {
     position: relative;
     background-repeat: no-repeat;
@@ -27,7 +29,7 @@
 .button-cta-color {
     display: flex;
     align-self: center;
-    max-width: 1200px;
+    max-width: px-to-rem(1200);
 }
 
 .tags {
@@ -40,10 +42,13 @@
     font-weight: 400;
     display: inline-block;
     margin: px-to-rem(4) px-to-rem(12);
-    letter-spacing: 4.5px;
+    letter-spacing: px-to-rem(4.5);
     text-transform: uppercase;
     color: $color-grey;
 }
+
+
+// All this is only available when Javascript is loaded
 
 .js {
     .project-header {
@@ -71,8 +76,8 @@
             }
             .button-cta-oncolor {
                 opacity: 1;
-                max-width: 600px;
-                max-height: 600px;
+                max-width: px-to-rem(600);
+                max-height: px-to-rem(600);
                 padding: 0 px-to-rem(18);
                 cursor: pointer;
             }
@@ -83,8 +88,8 @@
         &[data-state=blur] {
             .project-title {
                 opacity: 1;
-                max-width: 600px;
-                max-height: 600px;
+                max-width: px-to-rem(600);
+                max-height: px-to-rem(600);
             }
             .button-cta-oncolor {
                 opacity: 0;
@@ -115,7 +120,7 @@
             max-height: 0;
         }
         &[data-state=visible] {
-            max-height: 600px;
+            max-height: px-to-rem(600);
         }
     }
     .project-desc[data-state=hidden] .content * {
@@ -127,6 +132,9 @@
         transition: opacity 0.4s linear 0.2s;
     }
 }
+
+
+// Serve the images in the headers
 
 #project-1 .project-header {
     background-color: $color-ripe-lemon;
@@ -186,9 +194,13 @@
     }
 }
 
+
+// Clearfix
+
 .project-header:after,
 .project-desc:after {
     display: table;
     clear: both;
     content: ' ';
 }
+

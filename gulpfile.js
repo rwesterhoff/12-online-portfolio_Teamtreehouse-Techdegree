@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     prefix = require('gulp-autoprefixer'),
     purify = require('gulp-purifycss'),
+    uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     del = require('del');
@@ -34,6 +35,16 @@ gulp.task('scripts', function() {
         .pipe(browserSync.stream());
 });
 
+// Minify scripts
+gulp.task('uglify', ['scripts'], function() {
+    return gulp.src([
+            paths.js + '/main.js'
+        ])
+        .pipe(uglify())
+        .pipe(rename('main.min.js'))
+        .pipe(gulp.dest(paths.js));
+});
+
 // Static Server + watching scss/html files
 gulp.task('serve', ['scripts', 'sass'], function() {
 
@@ -60,18 +71,23 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream());
 });
 
+// Minify css
 gulp.task('purify', ['sass'], function() {
     return gulp.src(paths.css + '/' + 'main.css')
         .pipe(purify([
             'src/*.js',
             'src/*.html'
         ], { minify: true }))
-        .pipe(rename('main.css'))
-        .pipe(gulp.dest('css'));
+        .pipe(rename('main.min.css'))
+        .pipe(gulp.dest(paths.css));
 });
 
 gulp.task('clean', function() {
     return del([
+        paths.css + '/main.css',
+        paths.css + '/main.min.css',
+        paths.js + '/main.js',
+        paths.js + '/main.min.js',
         'dist',
         'css',
         'img',
@@ -80,10 +96,12 @@ gulp.task('clean', function() {
     ], { force: true });
 });
 
-gulp.task('build', ['clean' /*, 'purify'*/ ], function() {
+gulp.task('build', ['clean', 'uglify', 'purify'], function() {
     return gulp.src([
             paths.css + '/main.css',
             paths.js + '/main.js',
+            paths.css + '/main.min.css',
+            paths.js + '/main.min.js',
             paths.img + '/' + '*',
             paths.html
         ], { base: 'src/' })

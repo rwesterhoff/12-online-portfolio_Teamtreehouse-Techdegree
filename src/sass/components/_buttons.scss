@@ -1,3 +1,5 @@
+/* Buttons */
+
 button {
     height: px-to-rem(36);
     padding: 0 px-to-rem(18);
@@ -7,7 +9,11 @@ button {
     appearance: none;
 }
 
+
+// Style the call-to-action buttons
+
 .button-cta-oncolor {
     color: $color-grey;
     background-color: $color-white;
 }
+

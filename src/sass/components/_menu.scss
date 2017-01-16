@@ -1,6 +1,11 @@
+/* Menu */
+
 .menu {
     margin-top: px-to-rem(24);
 }
+
+
+// Menu items
 
 .menu li.menu-item {
     display: list-item;
@@ -33,7 +38,17 @@
 }
 
 
-/* JS menu button */
+// Menu items textlinks
+
+.menu-item a {
+    display: block;
+    padding: px-to-rem(6) px-to-rem(14);
+    text-decoration: none;
+    color: $color-white;
+}
+
+
+// JS menu button
 
 .menu-toggle {
     position: relative;
@@ -84,7 +99,7 @@
 }
 
 
-/* Toggle visibility menu */
+// Toggle visibility menu
 
 .menu-closed {
     display: none;
@@ -94,12 +109,3 @@
     display: block;
 }
 
-
-/* Menu items */
-
-.menu-item a {
-    display: block;
-    padding: px-to-rem(6) px-to-rem(14);
-    text-decoration: none;
-    color: $color-white;
-}

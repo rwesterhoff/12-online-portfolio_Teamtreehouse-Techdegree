@@ -1,3 +1,8 @@
+/* Links */
+
+
+// Give links the same hit area as buttons
+
 [class^=link] {
     position: relative;
     left: 50%;
@@ -7,6 +12,9 @@
     transform: translateX(-50%);
     border-radius: px-to-rem(18);
 }
+
+
+// Style secondary links
 
 .link-sec {
     background-color: transparent;
@@ -33,7 +41,11 @@
     }
 }
 
+
+// And the primary ones if available
+
 .link-cta {
     color: $color-white;
     background-color: $color-grey;
 }
+

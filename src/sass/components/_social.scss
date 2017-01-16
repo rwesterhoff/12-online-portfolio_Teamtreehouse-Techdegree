@@ -1,3 +1,5 @@
+/* Social icons */
+
 #social-linkedin {
     background-image: url(#{$path-img}icon-social-linkedin.svg);
 }
@@ -24,7 +26,8 @@
         overflow: hidden;
         width: px-to-rem(48);
         height: px-to-rem(48);
-        text-indent: -999999px;
+        text-indent: - px-to-rem(999999);
         background-size: 100%;
     }
 }
+

@@ -1,3 +1,5 @@
+/* Modules */
+
 .module > header {
     position: relative;
     height: px-to-rem(108);
@@ -23,6 +25,9 @@
     margin-top: px-to-rem(4);
 }
 
+
+// Clearfix
+
 .module:after,
 .module-item:after,
 .module:before,
@@ -31,3 +36,4 @@
     content: '';
     clear: both;
 }
+
