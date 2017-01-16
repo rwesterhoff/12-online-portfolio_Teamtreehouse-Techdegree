@@ -1,7 +1,7 @@
 /* Typography */
 
 body {
-    font-size: $root-font-size;
+    font-size: px-to-rem($root-font-size);
     font-family: $fonts-prim;
 }
 
