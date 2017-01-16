@@ -78,8 +78,8 @@
             }
         }
         &,
-        &[data-state=clicked],
-        &[data-state=clicked]:focus,
+        &.clicked,
+        &.clicked:focus,
         &[data-state=blur] {
             .project-title {
                 opacity: 1;
@@ -94,7 +94,7 @@
                 cursor: initial;
             }
         }
-        &[data-state=clicked]:after {
+        &.clicked:after {
             content: ' ';
             height: 0;
             position: absolute;

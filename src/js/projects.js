@@ -76,12 +76,12 @@ function showDescription() {
             // Remove all 'clicked' states
             for (i = 0; i < projectHeaders.length; i++) {
                 // Reset each header
-                projectHeaders[i].removeAttribute('data-state', 'clicked');
+                projectHeaders[i].classList.remove('clicked');
             }
             // Than show correct one
             description.setAttribute('data-state', 'visible');
             // Make header show as being 'clicked'
-            projectHeader.setAttribute('data-state', 'clicked');
+            projectHeader.classList.add('clicked');
 
         };
 

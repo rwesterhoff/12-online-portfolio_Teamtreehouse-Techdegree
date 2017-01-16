@@ -318,19 +318,19 @@ button {
   padding: 0 1.125rem;
   cursor: pointer; }
 
-.js .project-header .project-title, .js .project-header[data-state=clicked] .project-title, .js .project-header[data-state=clicked]:focus .project-title, .js .project-header[data-state=blur] .project-title {
+.js .project-header .project-title, .js .project-header.clicked .project-title, .js .project-header.clicked:focus .project-title, .js .project-header[data-state=blur] .project-title {
   opacity: 1;
   max-width: 600px;
   max-height: 600px; }
 
-.js .project-header .button-cta-oncolor, .js .project-header[data-state=clicked] .button-cta-oncolor, .js .project-header[data-state=clicked]:focus .button-cta-oncolor, .js .project-header[data-state=blur] .button-cta-oncolor {
+.js .project-header .button-cta-oncolor, .js .project-header.clicked .button-cta-oncolor, .js .project-header.clicked:focus .button-cta-oncolor, .js .project-header[data-state=blur] .button-cta-oncolor {
   opacity: 0;
   max-width: 0;
   max-height: 0;
   padding: 0;
   cursor: initial; }
 
-.js .project-header[data-state=clicked]:after {
+.js .project-header.clicked:after {
   content: ' ';
   height: 0;
   position: absolute;
